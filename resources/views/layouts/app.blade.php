@@ -28,25 +28,24 @@
         @if (Auth::check())
         <nav class="navbar navbar-expand-md navbar-light" style="background-color: #36393f">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    SDP Debate Tracker
-                </a>
-                <a class="nav-link btn btn-secondary btn-sm" data-toggle="modal" data-target="#create-debate-modal">Create</a>
-                @include('modals.create_debate')
+                <a class="navbar-brand" href="{{ route('home') }}">SDP Debate Tracker</a>
+
+                <span style="color: white">Total Visits: {{ $WebsiteVisit->visits }} last visited at {{ $WebsiteVisit->getFormattedUpdatedAt() }}</span>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @if (Auth::check())
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: white;">
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#create-debate-modal">Create</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
@@ -58,6 +57,7 @@
                                     </form>
                                 </div>
                             </li>
+                            @include('modals.create_debate')
                         @endif
                     </ul>
                 </div>

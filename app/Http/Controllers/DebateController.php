@@ -6,6 +6,7 @@ use App\Models\Debate;
 use Illuminate\Http\Request;
 
 class DebateController extends Controller {
+
     public function update(Request $request, $id) {
         $Debate = Debate::findOrFail($id);
         $Debate->update([
@@ -34,7 +35,7 @@ class DebateController extends Controller {
             'aztro' => $request->input('aztro') == 'Yes' ? true : false,
             'schlatt' => $request->input('schlatt') == 'Yes' ? true : false,
             'mika' => $request->input('mika') == 'Yes' ? true : false,
-            'podcast_release_date' =>  $request->input('podcast_release_date'),
+            'podcast_upload_date' =>  $request->input('podcast_upload_date'),
         ]);
 
         return redirect()->route('home')->with('success', 'Created Successfully!');

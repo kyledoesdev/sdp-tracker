@@ -52,7 +52,7 @@
                     </div>
                     <div class="form-group mb-2">
                         <label>Podcast Release Date</label>
-                        <input class="form-control" type="date" name="podcast_release_date" />
+                        <input class="form-control" type="date" name="podcast_upload_date" />
                     </div>
                 </div>
                 <div class="modal-footer">

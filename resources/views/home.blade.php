@@ -6,19 +6,19 @@
         <div class="col-md-12">
             <img style="max-width: 100%;" src="cover-art.png">
             <br />
-            <b><span style="background-color: white;">Art by: Twitter User: @Ivanna_Fox</span></b>
+            <b><span style="background-color: white;">Art by: Twitter User: <a target="_blank" href="https://twitter.com/Ivanna_Fox">@Ivanna_Fox</a></span></b>
             <br />
             <div class="table-responsive text-center">
                 <table class="table center mt-0">
                     <thead>
                         <tr style="background-color: white;">
                             <th>Podcast</th>
-                            <th>Debate / Discussion</th>
+                            <th class="text-nowrap">Debate / Discussion</th>
                             <th>Apandah</th>
                             <th>Aztrosist</th>
                             <th>Jschlatt</th>
                             <th>Mikasacus</th>
-                            <th>Podcast Upload Date</th>
+                            <th class="text-nowrap">Podcast Upload Date</th>
                             @if (Auth::check())
                                 <th>Edit</th>
                                 <th>Delete</th>
@@ -115,6 +115,8 @@
 
         </footer>
         <span class="text-center" style="color: white; font-size: 18px;"><i>For suggestions/corrections, feel free to send me a message.</i></span>
+        <br />
+        <span class="text-center" style="color: white">Total Visits: {{ $WebsiteVisit->visits }} last visited at {{ $WebsiteVisit->getFormattedUpdatedAt() }}</span>
     </div>
 </div>
 @endsection
