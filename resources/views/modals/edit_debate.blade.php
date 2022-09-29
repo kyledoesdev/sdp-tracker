@@ -3,15 +3,13 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Edit Podcast {{ $debate->podcast_number}} Debate</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <form method="POST" action="{{ route('debate.update', $debate->id) }}">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group mb-2">
-                        <label>Podcast Number</label>
+                        <label class="text-start">Podcast Number</label>
                         <input class="form-control" type="number" min="1" name="podcast_number" />
                     </div>
                     <div class="form-group mb-2">

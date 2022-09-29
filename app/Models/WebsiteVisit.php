@@ -12,10 +12,22 @@ class WebsiteVisit extends Model {
     use SoftDeletes;
 
     protected $fillable = [
-        'visits'
+        'visits',
+        'last_visit'
     ];
 
     public function getFormattedUpdatedAt() {
         return Carbon::parse($this->updated_at)->tz('America/New_York')->format('M-d-Y g:i A T');
+    }
+
+    public function getFormattedLastVisit() {
+        return Carbon::parse($this->last_visit)->tz('America/New_York')->format('M-d-Y g:i: A T');
+    }
+
+    public function updateVisits() {
+        $this->update([
+            'visits' => $this->visits + 1,
+            'last_visit' => $this->updated_at
+        ]);
     }
 }

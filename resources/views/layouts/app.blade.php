@@ -29,9 +29,6 @@
         <nav class="navbar navbar-expand-md navbar-light" style="background-color: #36393f">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('home') }}">SDP Debate Tracker</a>
-
-                <span style="color: white">Total Visits: {{ $WebsiteVisit->visits }} last visited at {{ $WebsiteVisit->getFormattedUpdatedAt() }}</span>
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

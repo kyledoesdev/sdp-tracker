@@ -11,7 +11,7 @@ class HomeController extends Controller {
     public function index() {
 
         $WebsiteVisit = WebsiteVisit::first();
-        $WebsiteVisit->update(['visits' => $WebsiteVisit->visits + 1]);
+        $WebsiteVisit->updateVisits();
 
         return view('home', [
             'WebsiteVisit' => $WebsiteVisit,
