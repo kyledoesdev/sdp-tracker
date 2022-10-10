@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Debate;
+use App\Exports\SDPTableExport;
 use Illuminate\Http\Request;
+use Excel;
 
 class DebateController extends Controller {
 
@@ -39,5 +41,9 @@ class DebateController extends Controller {
         ]);
 
         return redirect()->route('home')->with('success', 'Created Successfully!');
+    }
+
+    public function export () {
+        return Excel::download(new SDPTableExport, 'sdp.xlsx');
     }
 }
