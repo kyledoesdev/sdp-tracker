@@ -5,6 +5,7 @@
     <th>Aztrosist</th>
     <th>Jschlatt</th>
     <th>Mikasacus</th>
+    <th>Winning Side</th>
     <th class="text-nowrap">Podcast Upload Date</th>
     @if (Auth::check())
         <th>Edit</th>

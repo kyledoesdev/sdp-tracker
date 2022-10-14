@@ -1,21 +1,22 @@
 @if ($loop->first)
     @include('debates.debate_table_headers')
 @endif
-<tr class="text-center" style="background-color: white">
+<tr class="text-center" style="background-color: white;">
     <td>{{ $debate->getPodCastString() }}</td>
     <td>{{ $debate->debate_name }}</td>
-    <td @if($debate->apandah) style="background-color: greenyellow" @else style="background-color: red" @endif>
+    <td @if($debate->apandah) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
         <i @if($debate->apandah) class="fa fa-check" @else class="fa fa-times" @endif></i>
     </td>
-    <td @if($debate->aztro) style="background-color: greenyellow" @else style="background-color: red" @endif>
+    <td @if($debate->aztro) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
         <i @if($debate->aztro) class="fa fa-check" @else class="fa fa-times" @endif></i>
     </td>
-    <td @if($debate->schlatt) style="background-color: greenyellow" @else style="background-color: red" @endif>
+    <td @if($debate->schlatt) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
         <i @if($debate->schlatt) class="fa fa-check" @else class="fa fa-times" @endif></i>
     </td>
-    <td @if($debate->mika) style="background-color: greenyellow" @else style="background-color: red" @endif>
+    <td @if($debate->mika) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
         <i @if($debate->mika) class="fa fa-check" @else class="fa fa-times" @endif></i>
     </td>
+    <td>{{ $debate->winning_side }}</td>
     <td>{{ $debate->getFormattedPodcastUploadDate() }}</td>
     @if (Auth::check())
         <td>

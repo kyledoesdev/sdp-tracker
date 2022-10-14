@@ -18,6 +18,7 @@ class DebateController extends Controller {
             'aztro' => $request->input('aztro') != null ? $request->input('aztro') == 'Yes' ? true : false : $Debate->aztro,
             'schlatt' => $request->input('schlatt') != null ? $request->input('schlatt') == 'Yes' ? true : false : $Debate->schlatt,
             'mika' => $request->input('mika') != null ? $request->input('mika') == 'Yes' ? true : false : $Debate->mika,
+            'winning_side' => $request->input('winning_side') ?? $Debate->winning_side,
             'podcast_release_date' =>  $request->input('podcast_release_date') ?? $Debate->podcast_release_date,
         ]);
 
@@ -37,6 +38,7 @@ class DebateController extends Controller {
             'aztro' => $request->input('aztro') == 'Yes' ? true : false,
             'schlatt' => $request->input('schlatt') == 'Yes' ? true : false,
             'mika' => $request->input('mika') == 'Yes' ? true : false,
+            'winning_side' => $request->input('winning_side'),
             'podcast_upload_date' =>  $request->input('podcast_upload_date'),
         ]);
 

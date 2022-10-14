@@ -6,12 +6,13 @@
             <div class="col-md-12">
                 <img style="max-width: 100%;" src="cover-art.png">
                 <br />
-                <span style="background-color: white; font-weight: bold;">
-                    Art by: Twitter User: <a target="_blank" href="https://twitter.com/Ivanna_Fox">@Ivanna_Fox</a>
+                <span class="text-white" style="text-shadow: 2px 2px black;">
+                    Art by: Twitter User: <a class="text-white" style="text-decoration: none;" target="_blank" href="https://twitter.com/Ivanna_Fox">@Ivanna_Fox</a>
                 </span>
                 <br />
+                <h1 class="d-flex justify-content-center text-white" style="text-shadow: 2px 2px black;">Sleep Deprived Podcast</h1>
                 <div class="table-responsive">
-                    <table class="table center mt-2">
+                    <table class="table center table-striped mt-2">
                         <tbody class="m-0">
                             @foreach ($debates as $debate)
                                 @include('debates.debate_table_body')

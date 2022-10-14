@@ -49,6 +49,10 @@
                         </select>
                     </div>
                     <div class="form-group mb-2">
+                        <label>Winning Side</label>
+                        <input class="form-control" type="text" name="winning_side" />
+                    </div>
+                    <div class="form-group mb-2">
                         <label>Podcast Release Date</label>
                         <input class="form-control" type="date" name="podcast_upload_date" />
                     </div>

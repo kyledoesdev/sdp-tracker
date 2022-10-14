@@ -18,6 +18,7 @@ class Debate extends Model {
         'aztro',
         'schlatt',
         'mika',
+        'winning_side',
         'podcast_upload_date'
     ];
 

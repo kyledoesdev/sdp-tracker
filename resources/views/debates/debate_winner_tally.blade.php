@@ -6,6 +6,7 @@
     <td>Jschlatt Wins: {{ $schlattWins }}</td>
     <td>Mikasacus Wins: {{ $mikaWins }}</td>
     <td><!--Blank for formatting--></td>
+    <td><!--Blank for formatting--></td>
     @if (Auth::check())
         <td><!--Blank for formatting--></td>
         <td><!--Blank for formatting--></td>

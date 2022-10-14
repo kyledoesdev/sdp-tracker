@@ -23,7 +23,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body style="background: url(bg.jpg)">
+<body style="background: url(bg-2.png); background-repeat: no-repeat; background-attachment: fixed; background-position: top;">
     <div id="app">
         @if (Auth::check())
         <nav class="navbar navbar-expand-md navbar-light" style="background-color: #36393f">
