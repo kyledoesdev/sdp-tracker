@@ -16,6 +16,10 @@ class WebsiteVisit extends Model {
         'last_visit'
     ];
 
+    public function getVisits() : string {
+        return number_format($this->visits, 0, '.', ',');
+    }
+
     public function getFormattedUpdatedAt() {
         return Carbon::parse($this->updated_at)->tz('America/New_York')->format('M-d-Y g:i A T');
     }

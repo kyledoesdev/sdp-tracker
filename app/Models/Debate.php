@@ -22,6 +22,13 @@ class Debate extends Model {
         'podcast_upload_date'
     ];
 
+    public static function filter($filters) {
+        return self::query()
+            ->orWhere('podcast_number', 'LIKE', "%{$filters['search-box']}%")
+            ->orWhere('debate_name', 'LIKE', "%{$filters['search-box']}%")
+            ->orWhere('winning_side', 'LIKE', "%{$filters['search-box']}%");  
+    }
+
     public function getPodcastString() : string {
         return "Podcast # " . $this->podcast_number;
     }
