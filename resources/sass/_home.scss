@@ -2,7 +2,7 @@ h1 {
     font-size: 80px;
 }
 
-select {
+#debate-count-select {
     background: transparent;
     border: 0;
     padding: 5px;
@@ -10,11 +10,11 @@ select {
     text-shadow: 2px 2px black;
 }
 
-select option { 
+#debate-count-select option { 
     color: black; 
 }
 
-select::-ms-expand {
+#debate-count-select::-ms-expand {
     color: white;
     text-shadow: 2px 2px black;
 }
