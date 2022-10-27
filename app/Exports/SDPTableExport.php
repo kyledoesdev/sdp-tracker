@@ -17,6 +17,7 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
             'Aztrosist Won',
             'Jschlatt Won',
             'Mikasacus Won',
+            'Winning Side',
             'Podcast Upload Date'
         ];
     }
@@ -29,6 +30,7 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
             $Debate->aztro ? 'Won' : 'Lose',
             $Debate->schlatt ? 'Won' : 'Lose',
             $Debate->mika ? 'Won' : 'Lose',
+            $Debate->winning_side,
             $Debate->getFormattedPodcastUploadDate()
         ];
     }

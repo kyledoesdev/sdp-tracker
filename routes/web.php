@@ -16,7 +16,6 @@ Auth::routes();
 
 Route::middleware(['auth'])->group(function() {
 
-    Route::get('/export', [App\Http\Controllers\DebateController::class, 'export'])->name('debate.export');
     Route::post('/debate/store', [App\Http\Controllers\DebateController::class, 'store'])->name('debate.store');
     Route::post('/debate/{id}/update', [App\Http\Controllers\DebateController::class, 'update'])->name('debate.update');
     Route::post('/debate/{id}/delete', [App\Http\Controllers\DebateController::class, 'delete'])->name('debate.delete');
@@ -24,3 +23,4 @@ Route::middleware(['auth'])->group(function() {
 });
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/export', [App\Http\Controllers\DebateController::class, 'export'])->name('debate.export');

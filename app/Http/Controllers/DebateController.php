@@ -46,6 +46,6 @@ class DebateController extends Controller {
     }
 
     public function export () {
-        return Excel::download(new SDPTableExport, 'sdp.xlsx');
+        return Excel::download(new SDPTableExport, 'sdp_debates_as_of_'. now()->format('Y_m_d') .'.xlsx');
     }
 }

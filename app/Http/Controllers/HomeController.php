@@ -26,7 +26,7 @@ class HomeController extends Controller {
                 ? $request->input('debate-count') == 'All'
                     ? $Debates->paginate(count(Debate::all()))
                     : $Debates->paginate($request->input('debate-count'))
-                : $Debates->paginate(10),
+                : $Debates->paginate(8),
             'apandahWins' => Debate::where('apandah', true)->count(),
             'aztroWins' => Debate::where('aztro', true)->count(),
             'schlattWins' => Debate::where('schlatt', true)->count(),

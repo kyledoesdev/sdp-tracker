@@ -20,7 +20,7 @@
     <td>{{ $debate->getFormattedPodcastUploadDate() }}</td>
     @if (Auth::check())
         <td>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#debate-modal-{{$debate->podcast_number}}">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#debate-modal-{{$debate->podcast_number}}">
                 Edit
             </button>
         </td>
