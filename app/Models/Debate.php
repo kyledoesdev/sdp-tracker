@@ -30,7 +30,7 @@ class Debate extends Model {
          * Don't include any easter egg podcast records.
          */
         static::addGlobalScope('easter_egg_podcasts', function (Builder $builder) {
-            $builder->where('id', '!=', 69420);
+            $builder->where('podcast_number', '!=', 69420);
         });
     }
 
