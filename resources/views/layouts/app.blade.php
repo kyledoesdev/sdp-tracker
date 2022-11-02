@@ -23,9 +23,9 @@
 <body style="background: url(bg-2.png); background-size:cover; background-repeat: no-repeat; background-attachment: fixed; background-position: top;">
     <div id="app">
         @if (Auth::check())
-        <nav class="navbar navbar-expand-md navbar-light" style="background-color: #36393f">
+        <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('home') }}">SDP Debate Tracker</a>
+                <a class="navbar-brand text-white" style="text-shadow: 2px 2px black;" href="{{ route('home') }}">SDP Debate Tracker</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

@@ -6,17 +6,17 @@ Utilizes:
 - Blade
 - MySQL
 - Bootstrap
-- Heroku
+- AWS
 
-Version 0.17.1
+Version 0.20.0
 
 Features that will be coming soon:
 
 - [ ] Configure the backend to handle guests 
 - [ ] Transparent Navbar that doesn't look like garbage
 - [ ] Link-Tree like pages themed for each member.
-- [ ] Easter Eggs for Aztro & Mika
+- [x] Easter Eggs for Aztro & Mika
 - [ ] Allow the SDP members to track who has been on the Podcast
-- [ ] Update to Laravel 9
+- [x] Update to Laravel 9
 
 For suggestions and corrections feel free to start an issue.
