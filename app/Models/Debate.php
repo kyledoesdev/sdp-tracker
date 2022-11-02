@@ -27,7 +27,7 @@ class Debate extends Model {
         parent::boot();
 
         /**
-         * Don't include any easter egg podcast records.
+         * Don't include any easter egg podcast records by default.
          */
         static::addGlobalScope('easter_egg_podcasts', function (Builder $builder) {
             $builder->where('podcast_number', '!=', 69420);
@@ -36,7 +36,11 @@ class Debate extends Model {
 
     public static function filter($filters) {
         
-        if (isset($filters['search-box']) && ($filters['search-box'] === 'alexunknown') || $filters['search-box'] === 'lilacboy') {
+        if (isset($filters['search-box']) && (
+                strtolower(str_replace(" ", "", $filters['search-box'])) === 'alexunknown') || 
+                strtolower(str_replace(" ", "", $filters['search-box'])) === 'lilacboy' ||
+                strtolower(str_replace(" ", "", $filters['search-box'])) === 'therapytime'
+            ) {
             return 'mika-aztro-secret'; //return a string that will activate a secret page!
         }
 
@@ -58,6 +62,6 @@ class Debate extends Model {
         /**
          * Remove scoping that unincludes easter egg podcast from queries.
          */
-        return self::withoutGlobalScopes()->where('id', 69420)->paginate(1);
+        return self::withoutGlobalScopes()->where('podcast_number', 69420)->paginate(1);
     }
 }

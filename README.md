@@ -2,19 +2,19 @@
 An SPA written in laravel for the community and podcast members.
 
 Utilizes: 
-- PHP
-- Blade
+- Laravel 9
+- Blade / SCSS
 - MySQL
-- Bootstrap
+- Bootstrap 5
 - AWS
 
-Version 0.20.0
+Version 0.20.2
 
 Features that will be coming soon:
 
 - [ ] Configure the backend to handle guests 
-- [ ] Transparent Navbar that doesn't look like garbage
-- [ ] Link-Tree like pages themed for each member.
+- [ ] Transparent Navbar that doesn't look like garbage for admin users
+- [ ] Link-Tree like pages themed for each member. (maybe)
 - [x] Easter Eggs for Aztro & Mika
 - [ ] Allow the SDP members to track who has been on the Podcast
 - [x] Update to Laravel 9
