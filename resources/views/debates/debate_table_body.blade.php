@@ -1,8 +1,15 @@
+@inject('GuestDebates', 'App\Models\Debate')
 @if ($loop->first)
     @include('debates.debate_table_headers')
 @endif
 <tr class="text-center" style="background-color: white;">
-    <td>{{ $debate->getPodCastString() }}</td>
+    <td nowrap>
+        <a href="{{ $debate->podcast_link ? $debate->podcast_link : '#'}}"
+            class="btn btn-sm btn-secondary" target="_blank"
+        >
+            {{ $debate->getPodCastString() }}
+        </a>
+    </td>
     <td>{{ $debate->debate_name }}</td>
     <td @if($debate->apandah) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
         <i @if($debate->apandah) class="fa fa-check" @else class="fa fa-times" @endif></i>
@@ -16,6 +23,19 @@
     <td @if($debate->mika) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
         <i @if($debate->mika) class="fa fa-check" @else class="fa fa-times" @endif></i>
     </td>
+    @if ($GuestDebates::whereNotNull('guest')->count() > 0)
+        @if ($debate->guest != null && $debate->guest_name != null)
+            <td @if($debate->guest) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
+                <span>{{ $debate->guest_name }}</span>
+                <br />
+                <i @if($debate->guest) class="fa fa-check" @else class="fa fa-times" @endif></i>
+            </td>
+        @else
+            <td style="background-color: #99CCFF">
+                <i class="fa fa-minus"></i>
+            </td>
+        @endif
+    @endif
     <td>{{ $debate->winning_side }}</td>
     <td>{{ $debate->getFormattedPodcastUploadDate() }}</td>
     @if (Auth::check())

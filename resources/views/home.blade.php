@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-lg-12">
                 <img style="max-width: 100%;" src="cover-art.png">
                 <br />
                 <span class="text-white" style="text-shadow: 2px 2px black;">

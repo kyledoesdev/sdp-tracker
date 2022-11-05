@@ -19,7 +19,10 @@ class Debate extends Model {
         'aztro',
         'schlatt',
         'mika',
+        'guest',
+        'guest_name',
         'winning_side',
+        'podcast_link',
         'podcast_upload_date'
     ];
 
