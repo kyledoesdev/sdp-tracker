@@ -28,7 +28,7 @@ class DebateController extends Controller {
             'guest_name' => $request->input('guest_name') ?? $Debate->guest_name,
             'winning_side' => $request->input('winning_side') ?? $Debate->winning_side,
             'podcast_link' => $request->input('podcast_link') ?? $Debate->podcast_link,
-            'podcast_release_date' =>  $request->input('podcast_release_date') ?? $Debate->podcast_release_date,
+            'podcast_upload_date' => $request->input('podcast_upload_date') ?? $Debate->podcast_upload_date,
         ]);
 
         return redirect()->route('home')->with('success', 'Updated Success!');
