@@ -5,7 +5,7 @@
     <td>Aztrosist Wins: {{ $aztroWins }}</td>
     <td>Jschlatt Wins: {{ $schlattWins }}</td>
     <td>Mikasacus Wins: {{ $mikaWins }}</td>
-    @if ($GuestDebates::whereNotNull('guest')->count() > 0)
+    @if ($GuestDebates::where('guest', true)->count() > 0)
         <td>Guest Wins: {{ 'Wins: ' . $GuestDebates::where('guest', true)->count() }}</td>
     @endif
     <td><!--Blank for formatting--></td>

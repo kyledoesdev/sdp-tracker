@@ -5,7 +5,7 @@
     <th>Aztrosist</th>
     <th>Jschlatt</th>
     <th>Mikasacus</th>
-    @if ($GuestDebates::whereNotNull('guest')->count() > 0)
+    @if ($GuestDebates::where('guest', true)->count() > 0)
         <th>Guest</th>
     @endif
     <th>Winning Side</th>
