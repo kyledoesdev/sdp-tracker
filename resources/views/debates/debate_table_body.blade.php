@@ -23,8 +23,8 @@
     <td @if($debate->mika) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
         <i @if($debate->mika) class="fa fa-check" @else class="fa fa-times" @endif></i>
     </td>
-    @if ($GuestDebates::where('guest', true)->count() > 0)
-        @if ($debate->guest != null && $debate->guest_name != null)
+    @if ($GuestDebates::where('was_there_a_guest', true)->count() > 0)
+        @if ($debate->guest_name != null)
             <td @if($debate->guest) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
                 <span>{{ $debate->guest_name }}</span>
                 <br />

@@ -42,7 +42,7 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
             $Debate->mika ? 'Won' : 'Lose',
         ];
 
-        if (Debate::where('guest', true)->count() > 0 ) {
+        if (Debate::where('was_there_a_guest', true)->count() > 0 ) {
             if ($Debate->guest != null && $Debate->guest_name != null ) {
                 if ($Debate->guest) {
                     $columns = array_merge($columns, [$Debate->guest_name . ' Won']);

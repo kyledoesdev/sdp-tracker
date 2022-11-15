@@ -19,6 +19,7 @@ class DebateCreateRequest extends FormRequest {
             'aztro' => 'boolean|nullable',
             'schlatt' => 'boolean|nullable',
             'mika' => 'boolean|nullable',
+            'was_there_a_guest' => 'boolean|required',
             'guest' => 'boolean|nullable',
             'guest_name' => 'string|nullable',
             'winning_side' => 'required|string',

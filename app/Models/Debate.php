@@ -19,6 +19,7 @@ class Debate extends Model {
         'aztro',
         'schlatt',
         'mika',
+        'was_there_a_guest',
         'guest',
         'guest_name',
         'winning_side',

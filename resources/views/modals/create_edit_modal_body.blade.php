@@ -40,6 +40,14 @@
         </select>
     </div>
     <div class="form-group mb-2">
+        <label>Was there A Guest?</label>
+        <select class="form-control" name="was_there_a_guest">
+            <option></option>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+    </div>
+    <div class="form-group mb-2">
         <label>Did A Guest Win?</label>
         <select class="form-control" name="guest">
             <option></option>
