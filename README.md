@@ -8,6 +8,6 @@ Utilizes:
 - Bootstrap 5
 - AWS
 
-Version 0.31.0
+Version 0.31.1
 
 For suggestions and corrections feel free to start an issue.
