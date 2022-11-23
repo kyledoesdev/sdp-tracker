@@ -20,7 +20,7 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
             'Mikasacus Won',
         ];
 
-        if (Debate::whereNotNull('guest')->count() > 0) {
+        if (Debate::where('was_there_a_guest', true)->count() > 0) {
             $headings = array_merge($headings, ['Guest']);
         }
 

@@ -9,7 +9,9 @@
         <td>Guest Wins: {{ 'Wins: ' . $GuestDebates::where('guest', true)->count() }}</td>
     @endif
     <td><!--Blank for formatting--></td>
-    <td><!--Blank for formatting--></td>
+    <td class="text-center">
+        Displaying {{ $debates->firstItem() }} - {{ $debates->lastItem() }} / {{ $debates->total() }}
+    </td>
     @if (Auth::check())
         <td><!--Blank for formatting--></td>
         <td><!--Blank for formatting--></td>
