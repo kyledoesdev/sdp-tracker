@@ -1,6 +1,8 @@
 <tr class="text-center" style="background-color: white;">
     <th>Podcast</th>
-    <th class="text-nowrap">Debate / Discussion</th>
+    <th class="text-nowrap">Topic</th>
+    <th>Debate</th>
+    <th>Discussion</th>
     <th><a target="_blank" href="https://www.youtube.com/c/Apandah/about" class="btn btn-secondary text-white">Apandah</a></th>
     <th><a target="_blank" href="https://linktr.ee/aztrosist" class="btn btn-secondary text-white">Aztrosist</a></th>
     <th><a target="_blank" href="https://www.youtube.com/c/jschlattLIVE/about" class="btn btn-secondary text-white">Jschlatt</a></th>

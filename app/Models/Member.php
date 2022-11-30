@@ -6,10 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
-class Member extends Model
-{
+class Member extends Model {
     use HasFactory;
     use SoftDeletes;
+
+    const APANDAH = 'Apandah';
+    const AZTROSIST = 'Aztrosist';
+    const JSCHLATT = 'Jschlatt';
+    const MIKASACUS = 'Mikasacus';
 
     public $table = 'sdp_members';
 
@@ -18,19 +22,7 @@ class Member extends Model
         'name'
     ];
 
-    public static function Apandah () {
-       return self::where('name', 'Apandah')->first();
-    }
-
-    public static function Aztrosist () {
-        return self::where('name', 'Aztrosist')->first();
-    }
-
-    public static function Jschlatt () {
-        return self::where('name', 'Jschlatt')->first();
-    }
-
-    public static function Mikasacus () {
-        return self::where('name', 'Mikasacus')->first();
+    public static function getMember (string $member) {
+        return self::where('name', $member)->first();
     }
 }

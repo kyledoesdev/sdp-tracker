@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use App\Models\Member;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -19,6 +20,7 @@ class Debate extends Model {
         'aztro',
         'schlatt',
         'mika',
+        'was_discussion',
         'was_there_a_guest',
         'guest',
         'guest_name',
@@ -60,6 +62,10 @@ class Debate extends Model {
 
     public function getFormattedPodcastUploadDate() {
         return Carbon::parse($this->podcast_upload_date)->format('M-d-Y');
+    }
+
+    public function isDiscussion() {
+        return $this->was_discussion;
     }
 
     public static function getAztroAndMikaSecretDebate() {

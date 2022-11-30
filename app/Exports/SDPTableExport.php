@@ -13,7 +13,9 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
 
         $headings = [
             'Podcast Number',
-            'Debate Name',
+            'Topic',
+            'Was Debate ?',
+            'Was Discussion ?',
             'Apandah Won',
             'Aztrosist Won',
             'Jschlatt Won',
@@ -36,10 +38,12 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
         $columns = [
             $Debate->podcast_number,
             $Debate->debate_name,
-            $Debate->apandah ? 'Won' : 'Lose',
-            $Debate->aztro ? 'Won' : 'Lose',
-            $Debate->schlatt ? 'Won' : 'Lose',
-            $Debate->mika ? 'Won' : 'Lose',
+            !$Debate->isDiscussion() == true ? 'Yes' : 'No',
+            $Debate->isDiscussion() == true ? 'Yes' : 'No',
+            !$Debate->isDiscussion() ? $Debate->apandah ? 'Won' : 'Lose' : null,
+            !$Debate->isDiscussion() ? $Debate->aztro ? 'Won' : 'Lose' : null,
+            !$Debate->isDiscussion() ? $Debate->schlatt ? 'Won' : 'Lose' : null,
+            !$Debate->isDiscussion() ? $Debate->mika ? 'Won' : 'Lose' : null,
         ];
 
         if (Debate::where('was_there_a_guest', true)->count() > 0 ) {
@@ -55,7 +59,7 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
         } 
 
         return array_merge($columns, [
-            $Debate->winning_side,
+            !$Debate->isDiscussion() ? $Debate->winning_side : null,
             $Debate->podcast_link,
             $Debate->getFormattedPodcastUploadDate()
         ]);
