@@ -14,12 +14,11 @@
                     </div>
                     <div class="form-group mb-2">
                         <label>Topic Name</label><i style="color: red">*</i>
-                        <input class="form-control" type="text" name="debate_name" value="{{ $debate->debate_name }}" />
+                        <input class="form-control" type="text" name="topic_name" value="{{ $debate->topic_name }}" />
                     </div>
                     <div class="form-group mb-2">
                         <label>Was it a discussion?</label><i style="color: red">*</i>
                         <select class="form-control" name="was_discussion">
-                            <option></option>
                             <option value="1" @if ($debate->isDiscussion()) selected @endif>Yes</option>
                             <option value="0" @if (!$debate->isDiscussion()) selected @endif>No</option>
                         </select>
@@ -27,7 +26,7 @@
                     <div class="form-group mb-2">
                         <label>Did Apandah Win?</label>
                         <select class="form-control" name="apandah">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1" @if ($debate->apandah) selected @endif>Yes</option>
                             <option value="0" @if (!$debate->apandah) selected @endif>No</option>
                         </select>
@@ -35,7 +34,7 @@
                     <div class="form-group mb-2">
                         <label>Did Aztrosist Win?</label>
                         <select class="form-control" name="aztro">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1" @if ($debate->aztro) selected @endif>Yes</option>
                             <option value="0" @if (!$debate->aztro) selected @endif>No</option>
                         </select>
@@ -43,7 +42,7 @@
                     <div class="form-group mb-2">
                         <label>Did Jschlatt Win?</label>
                         <select class="form-control" name="schlatt">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1" @if ($debate->schlatt) selected @endif>Yes</option>
                             <option value="0" @if (!$debate->schlatt) selected @endif>No</option>
                         </select>
@@ -51,7 +50,7 @@
                     <div class="form-group mb-2">
                         <label>Did Mikasacus Win?</label>
                         <select class="form-control" name="mika"> 
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1" @if ($debate->mika) selected @endif>Yes</option>
                             <option value="0" @if (!$debate->mika) selected @endif>No</option>
                         </select>
@@ -59,7 +58,6 @@
                     <div class="form-group mb-2">
                         <label>Was there A Guest?</label><i style="color: red">*</i>
                         <select class="form-control" name="was_there_a_guest">
-                            <option></option>
                             <option value="1" @if ($debate->was_there_a_guest) selected @endif>Yes</option>
                             <option value="0" @if (!$debate->was_there_a_guest) selected @endif>No</option>
                         </select>
@@ -67,7 +65,7 @@
                     <div class="form-group mb-2">
                         <label>Did A Guest Win?</label>
                         <select class="form-control" name="guest">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1" @if ($debate->guest) selected @endif>Yes</option>
                             <option value="0" @if (!$debate->guest) selected @endif>No</option>
                         </select>

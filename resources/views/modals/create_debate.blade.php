@@ -14,12 +14,11 @@
                     </div>
                     <div class="form-group mb-2">
                         <label>Topic Name</label><i style="color: red">*</i>
-                        <input class="form-control" type="text" name="debate_name" />
+                        <input class="form-control" type="text" name="topic_name" />
                     </div>
                     <div class="form-group mb-2">
                         <label>Was it a discussion?</label><i style="color: red">*</i>
                         <select class="form-control" name="was_discussion">
-                            <option></option>
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
@@ -27,7 +26,7 @@
                     <div class="form-group mb-2">
                         <label>Did Apandah Win?</label>
                         <select class="form-control" name="apandah">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
@@ -35,7 +34,7 @@
                     <div class="form-group mb-2">
                         <label>Did Aztrosist Win?</label>
                         <select class="form-control" name="aztro">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
@@ -43,7 +42,7 @@
                     <div class="form-group mb-2">
                         <label>Did Jschlatt Win?</label>
                         <select class="form-control" name="schlatt">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
@@ -51,7 +50,7 @@
                     <div class="form-group mb-2">
                         <label>Did Mikasacus Win?</label>
                         <select class="form-control" name="mika">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
@@ -59,15 +58,15 @@
                     <div class="form-group mb-2">
                         <label>Was there A Guest?</label><i style="color: red">*</i>
                         <select class="form-control" name="was_there_a_guest">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
                     </div>
                     <div class="form-group mb-2">
-                        <label>Did A Guest Win?</label>
+                        <label>Did A Guest Win?</label><i style="color: red">*</i>
                         <select class="form-control" name="guest">
-                            <option></option>
+                            <option value="clear">- Select -</option>
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>

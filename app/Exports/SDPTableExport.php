@@ -37,7 +37,7 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
 
         $columns = [
             $Debate->podcast_number,
-            $Debate->debate_name,
+            $Debate->topic_name,
             !$Debate->isDiscussion() == true ? 'Yes' : 'No',
             $Debate->isDiscussion() == true ? 'Yes' : 'No',
             !$Debate->isDiscussion() ? $Debate->apandah ? 'Won' : 'Lose' : null,

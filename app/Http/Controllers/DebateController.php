@@ -17,21 +17,7 @@ class DebateController extends Controller {
 
     public function update(Request $request, $id) {
         $Debate = Debate::findOrFail($id);
-        $Debate->update([
-            'podcast_number' => $request->input('podcast_number') ?? $Debate->podcast_number,
-            'debate_name' => $request->input('debate_name') ?? $Debate->debate_name,
-            'apandah' => $request->input('apandah') != null ? $request->input('apandah') == 1 ? true : false : $Debate->apandah,
-            'aztro' => $request->input('aztro') != null ? $request->input('aztro') == 1 ? true : false : $Debate->aztro,
-            'schlatt' => $request->input('schlatt') != null ? $request->input('schlatt') == 1 ? true : false : $Debate->schlatt,
-            'mika' => $request->input('mika') != null ? $request->input('mika') == 1 ? true : false : $Debate->mika,
-            'was_discussion' => $request->input('was_discussion') != null ? $request->input('was_discussion') == 1 ? true : false : $Debate->was_discussion,
-            'was_there_a_guest' => $request->input('was_there_a_guest') != null ? $request->input('was_there_a_guest') == 1 ? true : false : $Debate->was_there_a_guest,
-            'guest' => $request->input('guest') != null ? $request->input('guest') == 1 ? true : false : $Debate->guest,
-            'guest_name' => $request->input('guest_name') ?? $Debate->guest_name,
-            'winning_side' => $request->input('winning_side') ?? $Debate->winning_side,
-            'podcast_link' => $request->input('podcast_link') ?? $Debate->podcast_link,
-            'podcast_upload_date' => $request->input('podcast_upload_date') ?? $Debate->podcast_upload_date,
-        ]);
+        $Debate->updatePodcast($request->all());
 
         return redirect()->route('home')->with('success', 'Updated Success!');
     }

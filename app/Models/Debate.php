@@ -15,7 +15,7 @@ class Debate extends Model {
 
     protected $fillable = [
         'podcast_number',
-        'debate_name',
+        'topic_name',
         'apandah',
         'aztro',
         'schlatt',
@@ -52,8 +52,48 @@ class Debate extends Model {
 
         return self::query()
             ->orWhere('podcast_number', 'LIKE', "%{$filters['search-box']}%")
-            ->orWhere('debate_name', 'LIKE', "%{$filters['search-box']}%")
+            ->orWhere('topic_name', 'LIKE', "%{$filters['search-box']}%")
             ->orWhere('winning_side', 'LIKE', "%{$filters['search-box']}%");  
+    }
+
+    public function updatePodcast($fields) {
+        $this->update([
+            'podcast_number' => $fields['podcast_number'] ?? $this->podcast_number,
+            'topic_name' => $fields['topic_name'],
+            'apandah' => $fields['apandah'] !== 'clear' 
+                ? $fields['apandah'] == 1
+                    ? true
+                    : false
+                : null,
+            'aztro' => $fields['aztro'] !== 'clear' 
+                ? $fields['aztro'] == 1 
+                    ? true 
+                    : false
+                : null,
+            'schlatt' => $fields['schlatt'] !== 'clear' 
+                ? $fields['schlatt'] == 1 
+                    ? true 
+                    : false 
+                : null,
+            'mika' => $fields['mika'] !== 'clear' 
+                ? $fields['mika'] == 1 
+                    ? true 
+                    : false 
+                : null,
+            'was_discussion' => $fields['was_discussion'] == 1 
+                ? true
+                : false,
+            'was_there_a_guest' => $fields['was_there_a_guest'] == 1 
+                ? true
+                : false,
+            'guest' => $fields['guest'] == 1 
+                ? true 
+                : false,
+            'guest_name' => $fields['guest_name'],
+            'winning_side' => $fields['winning_side'],
+            'podcast_link' => $fields['podcast_link'],
+            'podcast_upload_date' => $fields['podcast_upload_date'] ?? $this->podcast_upload_date,
+        ]);
     }
 
     public function getPodcastString() : string {

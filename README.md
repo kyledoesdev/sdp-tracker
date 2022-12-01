@@ -8,11 +8,6 @@ Utilizes:
 - Bootstrap 5
 - AWS
 
-Version 0.40.0
-
-# TODO
-- [ ] Clean up naming conventions
-- [ ] reduce bloat in debate controller
-- [ ] reduce bloat in views
+Version 0.41.0
 
 For suggestions and corrections feel free to start an issue.

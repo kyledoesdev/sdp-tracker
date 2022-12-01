@@ -14,7 +14,7 @@ class DebateCreateRequest extends FormRequest {
     public function rules() {
         return [
             'podcast_number' => 'required|integer',
-            'debate_name' => 'required|string',
+            'topic_name' => 'required|string',
             'apandah' => 'boolean|nullable',
             'aztro' => 'boolean|nullable',
             'schlatt' => 'boolean|nullable',
