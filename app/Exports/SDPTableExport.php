@@ -40,10 +40,26 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
             $Debate->topic_name,
             !$Debate->isDiscussion() == true ? 'Yes' : 'No',
             $Debate->isDiscussion() == true ? 'Yes' : 'No',
-            !$Debate->isDiscussion() ? $Debate->apandah ? 'Won' : 'Lose' : null,
-            !$Debate->isDiscussion() ? $Debate->aztro ? 'Won' : 'Lose' : null,
-            !$Debate->isDiscussion() ? $Debate->schlatt ? 'Won' : 'Lose' : null,
-            !$Debate->isDiscussion() ? $Debate->mika ? 'Won' : 'Lose' : null,
+            !$Debate->isDiscussion() 
+                ? $Debate->apandah !== null
+                    ? ($Debate->apandah == true ? 'Won' : 'Lose') 
+                    : null
+                : null,
+            !$Debate->isDiscussion() 
+                ? $Debate->aztro !== null
+                    ? ($Debate->aztro == true ? 'Won' : 'Lose') 
+                    : null
+                : null,
+            !$Debate->isDiscussion() 
+                ? $Debate->schlatt !== null
+                    ? ($Debate->schlatt == true ? 'Won' : 'Lose') 
+                    : null
+                : null,
+            !$Debate->isDiscussion() 
+                ? $Debate->mika !== null
+                    ? ($Debate->mika == true ? 'Won' : 'Lose') 
+                    : null
+                : null,
         ];
 
         if (Debate::where('was_there_a_guest', true)->count() > 0 ) {
