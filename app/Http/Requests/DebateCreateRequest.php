@@ -23,7 +23,7 @@ class DebateCreateRequest extends FormRequest {
             'was_there_a_guest' => 'boolean|required',
             'guest' => 'nullable',
             'guest_name' => 'string|nullable',
-            'winning_side' => 'required|string',
+            'winning_side' => 'required_if:was_discussion,false',
             'podcast_link' => 'nullable|string',
             'podcast_upload_date' => 'required',
         ];

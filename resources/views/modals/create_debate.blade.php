@@ -10,7 +10,7 @@
                 <div class="modal-body">
                     <div class="form-group mb-2">
                         <label class="text-start">Podcast Number</label><i style="color: red">*</i>
-                        <input class="form-control" type="number" min="1" name="podcast_number" />
+                        <input class="form-control" type="number" name="podcast_number" />
                     </div>
                     <div class="form-group mb-2">
                         <label>Topic Name</label><i style="color: red">*</i>
@@ -64,9 +64,9 @@
                         </select>
                     </div>
                     <div class="form-group mb-2">
-                        <label>Did A Guest Win?</label><i style="color: red">*</i>
+                        <label>Did A Guest Win?</label>
                         <select class="form-control" name="guest">
-                            <option value="clear">- Select -</option>
+                            <option value="">- Select -</option>
                             <option value="1">Yes</option>
                             <option value="0">No</option>
                         </select>
@@ -76,7 +76,7 @@
                         <input class="form-control" type="text" name="guest_name" />
                     </div>
                     <div class="form-group mb-2">
-                        <label>Winning Side</label><i style="color: red">*</i>
+                        <label title="only required if a debate">Winning Side</label><i style="color: red">*</i>
                         <input class="form-control" type="text" name="winning_side" />
                     </div>
                     <div class="form-group mb-2">

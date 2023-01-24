@@ -65,10 +65,15 @@
     
     @if ($GuestDebates::where('was_there_a_guest', true)->count() > 0)
         @if ($debate->guest_name != null)
-            <td @if($debate->guest) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
+            <td @if($debate->guest === null) style="background-color: #99CCFF" @elseif($debate->guest) style="background-color: #67C76E" @else style="background-color: #EF5F5F" @endif>
                 <span>{{ $debate->guest_name }}</span>
                 <br />
-                <i @if($debate->guest) class="fa fa-check" @else class="fa fa-times" @endif></i>
+                <i 
+                    @if($debate->guest === null) class="fa fa-minus" 
+                    @elseif($debate->guest) class="fa fa-check"
+                    @else class="fa fa-times" 
+                    @endif>
+                </i>
             </td>
         @else
             <td style="background-color: #99CCFF">
