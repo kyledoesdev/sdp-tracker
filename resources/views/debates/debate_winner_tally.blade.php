@@ -10,6 +10,8 @@
 
     @if (App\Models\Debate::whereHasGuestThatWon())
         <td>Guest Wins: {{ App\Models\Debate::getTotalGuestWins() }}</td>
+    @else
+        <td><!-- Blank for formatting --></td>
     @endif
 
     <td><!-- Blank for formatting --></td>

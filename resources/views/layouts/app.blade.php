@@ -31,8 +31,6 @@
             @yield('styles')
             @yield('scripts')
         </main>
-
-        @include('includes.footer')
     </div>
 </body>
 </html>
