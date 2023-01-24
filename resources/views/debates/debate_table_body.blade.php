@@ -76,7 +76,7 @@
                 </i>
             </td>
         @else
-            <td style="background-color: #99CCFF">
+            <td>
                 <i class="fa fa-minus"></i>
             </td>
         @endif
