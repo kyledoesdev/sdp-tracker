@@ -17,57 +17,50 @@
                         <input class="form-control" type="text" name="topic_name" value="{{ $debate->topic_name }}" />
                     </div>
                     <div class="form-group mb-2">
-                        <label>Was it a discussion?</label><i style="color: red">*</i>
-                        <select class="form-control" name="was_discussion">
-                            <option value="1" @if ($debate->isDiscussion()) selected @endif>Yes</option>
-                            <option value="0" @if (!$debate->isDiscussion()) selected @endif>No</option>
-                        </select>
-                    </div>
-                    <div class="form-group mb-2">
                         <label>Did Apandah Win?</label>
                         <select class="form-control" name="apandah">
-                            <option value="clear">- Select -</option>
+                            <option value="clear" @if ($debate->apandah === null) selected @endif>- Select -</option>
                             <option value="1" @if ($debate->apandah) selected @endif>Yes</option>
-                            <option value="0" @if (!$debate->apandah) selected @endif>No</option>
+                            <option value="0" @if ($debate->apandah === false) selected @endif>No</option>
                         </select>
                     </div>
                     <div class="form-group mb-2">
                         <label>Did Aztrosist Win?</label>
                         <select class="form-control" name="aztro">
-                            <option value="clear">- Select -</option>
+                            <option value="clear" @if ($debate->aztro === null) selected @endif>- Select -</option>
                             <option value="1" @if ($debate->aztro) selected @endif>Yes</option>
-                            <option value="0" @if (!$debate->aztro) selected @endif>No</option>
+                            <option value="0" @if ($debate->aztro === false) selected @endif>No</option>
                         </select>
                     </div>
                     <div class="form-group mb-2">
                         <label>Did Jschlatt Win?</label>
                         <select class="form-control" name="schlatt">
-                            <option value="clear">- Select -</option>
+                            <option value="clear" @if ($debate->schlatt === null) selected @endif>- Select -</option>
                             <option value="1" @if ($debate->schlatt) selected @endif>Yes</option>
-                            <option value="0" @if (!$debate->schlatt) selected @endif>No</option>
+                            <option value="0" @if ($debate->schlatt === false) selected @endif>No</option>
                         </select>
                     </div>
                     <div class="form-group mb-2">
                         <label>Did Mikasacus Win?</label>
                         <select class="form-control" name="mika"> 
-                            <option value="clear">- Select -</option>
+                            <option value="clear" @if ($debate->mika === null) selected @endif>- Select -</option>
                             <option value="1" @if ($debate->mika) selected @endif>Yes</option>
-                            <option value="0" @if (!$debate->mika) selected @endif>No</option>
+                            <option value="0" @if ($debate->mika === false) selected @endif>No</option>
                         </select>
                     </div>
                     <div class="form-group mb-2">
                         <label>Was there A Guest?</label><i style="color: red">*</i>
                         <select class="form-control" name="was_there_a_guest">
                             <option value="1" @if ($debate->was_there_a_guest) selected @endif>Yes</option>
-                            <option value="0" @if (!$debate->was_there_a_guest) selected @endif>No</option>
+                            <option value="0" @if ($debate->was_there_a_guest === false) selected @endif>No</option>
                         </select>
                     </div>
                     <div class="form-group mb-2">
                         <label>Did A Guest Win?</label>
                         <select class="form-control" name="guest">
-                            <option value="clear">- Select -</option>
+                            <option value="clear" @if ($debate->guest === null) selected @endif>- Select -</option>
                             <option value="1" @if ($debate->guest) selected @endif>Yes</option>
-                            <option value="0" @if (!$debate->guest) selected @endif>No</option>
+                            <option value="0" @if ($debate->guest === false) selected @endif>No</option>
                         </select>
                     </div>
                     <div class="form-group mb-2">
@@ -87,6 +80,7 @@
                         <input class="form-control" type="date" name="podcast_upload_date" />
                     </div>
                 </div>
+                <input type="hidden" name="podcast_type" value="debate">
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>

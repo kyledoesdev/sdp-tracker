@@ -12,20 +12,30 @@ class DebateCreateRequest extends FormRequest {
     }
 
     public function rules() {
-        return [
+
+        $discussion = [
             'podcast_number' => 'required|integer',
             'topic_name' => 'required|string',
-            'apandah' => 'nullable',
-            'aztro' => 'nullable',
-            'schlatt' => 'nullable',
-            'mika' => 'nullable',
-            'was_discussion' => 'boolean|nullable',
             'was_there_a_guest' => 'boolean|required',
-            'guest' => 'nullable',
             'guest_name' => 'string|nullable',
-            'winning_side' => 'required_if:was_discussion,false',
             'podcast_link' => 'nullable|string',
             'podcast_upload_date' => 'required',
         ];
+
+        if ($this->podcast_type === 'debate') {
+            $debate = array_merge($discussion + [
+                'apandah' => 'required',
+                'aztro' => 'required',
+                'schlatt' => 'required',
+                'mika' => 'required',
+                'guest' => 'nullable',
+                'winning_side' => 'required_if:was_discussion,false',
+            ]);
+
+            return $debate;
+        }
+
+
+        return $discussion;
     }
 }

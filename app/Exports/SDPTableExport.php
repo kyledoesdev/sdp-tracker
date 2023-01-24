@@ -22,8 +22,10 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
             'Mikasacus Won',
         ];
 
-        if (Debate::where('was_there_a_guest', true)->count() > 0) {
-            $headings = array_merge($headings, ['Guest']);
+        if (Debate::whereHasGuestThatWon()) {
+            $headings = array_merge($headings, [
+                'Did the Guest Win ?',
+            ]);
         }
 
         return array_merge($headings,  [
@@ -38,32 +40,32 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
         $columns = [
             $Debate->podcast_number,
             $Debate->topic_name,
-            !$Debate->isDiscussion() == true ? 'Yes' : 'No',
+            $Debate->isDebate() == true ? 'Yes' : 'No',
             $Debate->isDiscussion() == true ? 'Yes' : 'No',
-            !$Debate->isDiscussion() 
+            $Debate->isDebate() 
                 ? $Debate->apandah !== null
                     ? ($Debate->apandah == true ? 'Won' : 'Lose') 
                     : null
                 : null,
-            !$Debate->isDiscussion() 
+            $Debate->isDebate() 
                 ? $Debate->aztro !== null
                     ? ($Debate->aztro == true ? 'Won' : 'Lose') 
                     : null
                 : null,
-            !$Debate->isDiscussion() 
+            $Debate->isDebate() 
                 ? $Debate->schlatt !== null
                     ? ($Debate->schlatt == true ? 'Won' : 'Lose') 
                     : null
                 : null,
-            !$Debate->isDiscussion() 
+            $Debate->isDebate()
                 ? $Debate->mika !== null
                     ? ($Debate->mika == true ? 'Won' : 'Lose') 
                     : null
                 : null,
         ];
 
-        if (Debate::where('was_there_a_guest', true)->count() > 0 ) {
-            if ($Debate->guest != null && $Debate->guest_name != null ) {
+        if (Debate::whereHasGuestThatWon() && $Debate->isDebate()) {
+            if ($Debate->guest !== null && $Debate->guest_name !== null) {
                 if ($Debate->guest) {
                     $columns = array_merge($columns, [$Debate->guest_name . ' Won']);
                 } else {
@@ -75,7 +77,7 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
         } 
 
         return array_merge($columns, [
-            !$Debate->isDiscussion() ? $Debate->winning_side : null,
+            $Debate->isDebate() ? $Debate->winning_side : null,
             $Debate->podcast_link,
             $Debate->getFormattedPodcastUploadDate()
         ]);
@@ -85,6 +87,6 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
     * @return \Illuminate\Support\Collection
     */
     public function collection() {
-        return Debate::orderBy('podcast_upload_date', 'DESC')->get();
+        return Debate::orderBy('podcast_number', 'DESC')->get();
     }
 }

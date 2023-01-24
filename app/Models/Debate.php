@@ -40,6 +40,9 @@ class Debate extends Model {
         });
     }
 
+    /**
+     * Queries
+     */
     public static function filter($filters) {
         
         if (isset($filters['search-box']) && (
@@ -56,46 +59,65 @@ class Debate extends Model {
             ->orWhere('winning_side', 'LIKE', "%{$filters['search-box']}%");  
     }
 
-    public function updatePodcast($fields) {
-        $this->update([
-            'podcast_number' => $fields['podcast_number'] ?? $this->podcast_number,
-            'topic_name' => $fields['topic_name'],
-            'apandah' => $fields['apandah'] !== 'clear' 
-                ? $fields['apandah'] == 1
-                    ? true
-                    : false
-                : null,
-            'aztro' => $fields['aztro'] !== 'clear' 
-                ? $fields['aztro'] == 1 
-                    ? true 
-                    : false
-                : null,
-            'schlatt' => $fields['schlatt'] !== 'clear' 
-                ? $fields['schlatt'] == 1 
-                    ? true 
-                    : false 
-                : null,
-            'mika' => $fields['mika'] !== 'clear' 
-                ? $fields['mika'] == 1 
-                    ? true 
-                    : false 
-                : null,
-            'was_discussion' => $fields['was_discussion'] == 1 
-                ? true
-                : false,
-            'was_there_a_guest' => $fields['was_there_a_guest'] == 1 
-                ? true
-                : false,
-            'guest' => $fields['guest'] == 1 
-                ? true 
-                : false,
-            'guest_name' => $fields['guest_name'],
-            'winning_side' => $fields['winning_side'],
-            'podcast_link' => $fields['podcast_link'],
-            'podcast_upload_date' => $fields['podcast_upload_date'] ?? $this->podcast_upload_date,
-        ]);
+    public static function hasHadGuest() : bool {
+        return self::where('was_there_a_guest', true)->count() > 0;
     }
 
+    public static function whereHasGuestThatWon() : bool {
+        return self::where('was_there_a_guest', true)->where('guest', true)->count() > 0;
+    }
+
+    public function updatePodcast($fields) {
+
+        $generalUpdates = [
+            'podcast_number' => $fields['podcast_number'] ?? $this->podcast_number,
+            'topic_name' => $fields['topic_name'],
+            'was_there_a_guest' => $fields['was_there_a_guest'] == 1 ? true : false,
+            'guest_name' => $fields['guest_name'],
+            'podcast_link' => $fields['podcast_link'],
+            'podcast_upload_date' => $fields['podcast_upload_date'] ?? $this->podcast_upload_date,
+        ];
+
+        if ($fields['podcast_type'] === 'debate') {
+            $this->update($generalUpdates + [
+                'apandah' => $fields['apandah'] !== 'clear' 
+                    ? $fields['apandah'] == 1
+                        ? true
+                        : false
+                    : null,
+                'aztro' => $fields['aztro'] !== 'clear' 
+                    ? $fields['aztro'] == 1 
+                        ? true 
+                        : false
+                    : null,
+                'schlatt' => $fields['schlatt'] !== 'clear' 
+                    ? $fields['schlatt'] == 1 
+                        ? true 
+                        : false 
+                    : null,
+                'mika' => $fields['mika'] !== 'clear' 
+                    ? $fields['mika'] == 1 
+                        ? true 
+                        : false 
+                    : null,
+                'guest' => $fields['guest'] == 1 
+                    ? true 
+                    : false,
+                'winning_side' => $fields['winning_side'],
+            ]);
+        }
+
+        $this->update($generalUpdates);
+    }
+    
+    public static function getAztroAndMikaSecretDebate() {
+        //Remove scoping that unincludes easter egg podcast from queries.
+        return self::withoutGlobalScopes()->where('podcast_number', 69420)->paginate(1);
+    }
+
+    /**
+     * Accessors
+     */
     public function getPodcastString() : string {
         return "Podcast # " . $this->podcast_number;
     }
@@ -108,10 +130,11 @@ class Debate extends Model {
         return $this->was_discussion;
     }
 
-    public static function getAztroAndMikaSecretDebate() {
-        /**
-         * Remove scoping that unincludes easter egg podcast from queries.
-         */
-        return self::withoutGlobalScopes()->where('podcast_number', 69420)->paginate(1);
+    public function isDebate() {
+        return ! $this->was_discussion;
+    }
+
+    public static function getTotalGuestWins() : int {
+        return self::query()->where('guest', true)->count();
     }
 }

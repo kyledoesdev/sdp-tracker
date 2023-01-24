@@ -17,13 +17,6 @@
                         <input class="form-control" type="text" name="topic_name" />
                     </div>
                     <div class="form-group mb-2">
-                        <label>Was it a discussion?</label><i style="color: red">*</i>
-                        <select class="form-control" name="was_discussion">
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                    </div>
-                    <div class="form-group mb-2">
                         <label>Did Apandah Win?</label>
                         <select class="form-control" name="apandah">
                             <option value="">- Select -</option>
@@ -88,6 +81,7 @@
                         <input class="form-control" type="date" name="podcast_upload_date" />
                     </div>
                 </div>
+                <input type="hidden" name="podcast_type" value="debate">
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Save changes</button>

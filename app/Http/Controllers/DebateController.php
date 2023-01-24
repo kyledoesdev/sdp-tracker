@@ -11,7 +11,9 @@ use Excel;
 class DebateController extends Controller {
 
     public function store(DebateCreateRequest $request) {
-        Debate::create($request->validated());
+        Debate::create($request->validated() + [
+            'was_discussion' => $request->input('podcast_type') === 'debate' ? false : true
+        ]);
         return redirect()->route('home')->with('success', 'Created Successfully!');
     }
 
