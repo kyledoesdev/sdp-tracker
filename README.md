@@ -2,12 +2,12 @@
 An SPA written in laravel for the community and podcast members.
 
 Utilizes: 
-- Laravel 9
+- Laravel 10
 - Blade / SCSS
 - MySQL
 - Bootstrap 5
 - AWS
 
-Version 0.51.2
+Version 0.52.0
 
 For suggestions and corrections feel free to start an issue.
