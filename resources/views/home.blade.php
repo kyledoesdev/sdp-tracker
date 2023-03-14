@@ -13,7 +13,7 @@
                 <h1 class="d-flex display-3 justify-content-center text-center text-white mt-2" style="text-shadow: 2px 2px black;">Sleep Deprived Podcast</h1>
                 @include('includes.search_debate_table')
                 <div class="table-responsive">
-                    <table class="table center table-striped mt-2">
+                    <table class="table center table-striped border border-secondary border-2 mt-2">
                         <tbody class="m-0">
                             @foreach ($debates as $debate)
                                 @include('debates.debate_table_body')

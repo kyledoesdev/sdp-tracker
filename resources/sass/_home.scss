@@ -2,6 +2,15 @@ h1 {
     font-size: 80px;
 }
 
+.animate {
+    transition: .5s ease;
+}
+
+.animate:hover{
+    box-shadow: 0 0 0 2px #000000;
+    transition: .5s ease;
+}
+
 #debate-count-select {
     background: transparent;
     border: 0;
