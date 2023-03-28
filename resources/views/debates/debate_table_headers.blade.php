@@ -25,17 +25,19 @@
             />
         </a>
     </th>
-    <th class="p-1">
-        <a target="_blank" href="https://www.youtube.com/c/jschlattLIVE/about">
-            <img 
-                class="border border-2 border-dark animate" 
-                src="jschlatt.jpg" 
-                alt="Jschlatt Image" 
-                width="50" 
-                height="50"
-            />
-        </a>
-    </th>
+    @if ($season->season == 1)
+        <th class="p-1">
+            <a target="_blank" href="https://www.youtube.com/c/jschlattLIVE/about">
+                <img 
+                    class="border border-2 border-dark animate" 
+                    src="jschlatt.jpg" 
+                    alt="Jschlatt Image" 
+                    width="50" 
+                    height="50"
+                />
+            </a>
+        </th>
+    @endif
     <th class="p-1">
         <a target="_blank" href="https://www.youtube.com/channel/UCIWEHR8n8GiLMWY8v7IP0Gg/about">
             <img 

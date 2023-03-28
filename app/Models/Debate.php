@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Debate extends Model {
     use SoftDeletes;
@@ -25,6 +26,7 @@ class Debate extends Model {
         'guest',
         'guest_name',
         'winning_side',
+        'season',
         'podcast_link',
         'podcast_upload_date'
     ];
@@ -74,6 +76,7 @@ class Debate extends Model {
             'topic_name' => $fields['topic_name'],
             'was_there_a_guest' => $fields['was_there_a_guest'] == 1 ? true : false,
             'guest_name' => $fields['guest_name'],
+            'season' => $fields['season'] ?? $this->season,
             'podcast_link' => $fields['podcast_link'],
             'podcast_upload_date' => $fields['podcast_upload_date'] ?? $this->podcast_upload_date,
         ];
@@ -110,11 +113,6 @@ class Debate extends Model {
         $this->update($generalUpdates);
     }
     
-    public static function getAztroAndMikaSecretDebate() {
-        //Remove scoping that unincludes easter egg podcast from queries.
-        return self::withoutGlobalScopes()->where('podcast_number', 69420)->paginate(1);
-    }
-
     /**
      * Accessors
      */
@@ -123,7 +121,7 @@ class Debate extends Model {
     }
 
     public function getFormattedPodcastUploadDate() {
-        return Carbon::parse($this->podcast_upload_date)->format('M-d-Y');
+        return Carbon::parse($this->podcast_upload_date)->format('M d Y');
     }
 
     public function isDiscussion() {
@@ -132,9 +130,5 @@ class Debate extends Model {
 
     public function isDebate() {
         return ! $this->was_discussion;
-    }
-
-    public static function getTotalGuestWins() : int {
-        return self::query()->where('guest', true)->count();
     }
 }

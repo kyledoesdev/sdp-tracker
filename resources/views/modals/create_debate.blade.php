@@ -73,6 +73,14 @@
                         <input class="form-control" type="text" name="winning_side" />
                     </div>
                     <div class="form-group mb-2">
+                        <label>Season</label><i style="color: red">*</i>
+                        <select class="form-control" name="season">
+                            <option value="">- Select -</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                    <div class="form-group mb-2">
                         <label>Podcast Link</label>
                         <input class="form-control" type="text" name="podcast_link" />
                     </div>

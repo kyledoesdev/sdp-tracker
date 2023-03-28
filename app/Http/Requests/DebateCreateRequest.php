@@ -3,12 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Auth;
 
 class DebateCreateRequest extends FormRequest {
     
     public function authorize() {
-        return Auth::check();
+        return auth()->check();
     }
 
     public function rules() {
@@ -18,6 +17,7 @@ class DebateCreateRequest extends FormRequest {
             'topic_name' => 'required|string',
             'was_there_a_guest' => 'boolean|required',
             'guest_name' => 'string|nullable',
+            'season' => 'required|integer',
             'podcast_link' => 'nullable|string',
             'podcast_upload_date' => 'required',
         ];
@@ -26,7 +26,7 @@ class DebateCreateRequest extends FormRequest {
             $debate = array_merge($discussion + [
                 'apandah' => 'required',
                 'aztro' => 'required',
-                'schlatt' => 'required',
+                'schlatt' => 'required_if:season,1',
                 'mika' => 'required',
                 'guest' => 'nullable',
                 'winning_side' => 'required_if:was_discussion,false',

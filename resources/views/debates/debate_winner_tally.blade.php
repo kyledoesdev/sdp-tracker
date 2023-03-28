@@ -3,17 +3,13 @@
     <td><!--Blank for formatting--></td>
     <td><!--Blank for formatting--></td>
     <td><!--Blank for formatting--></td>
-    <td>Apandah Wins: {{ $apandahWins }}</td>
-    <td>Aztro Wins: {{ $aztroWins }}</td>
-    <td>Jschlatt Wins: {{ $schlattWins }}</td>
-    <td>Mika Wins: {{ $mikaWins }}</td>
-
-    @if (App\Models\Debate::whereHasGuestThatWon())
-        <td>Guest Wins: {{ App\Models\Debate::getTotalGuestWins() }}</td>
-    @else
-        <td><!-- Blank for formatting --></td>
+    <td>Apandah Wins: {{ $season->getWinCountForMember('apandah') }}</td>
+    <td>Aztro Wins: {{ $season->getWinCountForMember('aztro') }}</td>
+    @if ($season->season == 1)
+        <td>Jschlatt Wins: {{ $season->getWinCountForMember('schlatt') }}</td>
     @endif
-
+    <td>Mika Wins: {{ $season->getWinCountForMember('mika') }}</td>
+    <td>Guest Wins: {{ $season->getTotalGuestWins() }}</td>
     <td><!-- Blank for formatting --></td>
 
     @guest

@@ -11,7 +11,8 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
 
     public function headings () : array {
 
-        $headings = [
+        return [
+            'Season',
             'Podcast Number',
             'Topic',
             'Was Debate ?',
@@ -20,24 +21,17 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
             'Aztrosist Won',
             'Jschlatt Won',
             'Mikasacus Won',
-        ];
-
-        if (Debate::whereHasGuestThatWon()) {
-            $headings = array_merge($headings, [
-                'Did the Guest Win ?',
-            ]);
-        }
-
-        return array_merge($headings,  [
+            'Did the Guest Win ?',
             'Winning Side',
             'Podcast Link',
             'Podcast Upload Date'
-        ]);
+        ];
     }
 
     public function map ($Debate) : array {
 
         $columns = [
+            $Debate->season,
             $Debate->podcast_number,
             $Debate->topic_name,
             $Debate->isDebate() == true ? 'Yes' : 'No',
@@ -64,17 +58,15 @@ class SDPTableExport implements FromCollection, WithMapping, WithHeadings {
                 : null,
         ];
 
-        if (Debate::whereHasGuestThatWon() && $Debate->isDebate()) {
-            if ($Debate->guest !== null && $Debate->guest_name !== null) {
-                if ($Debate->guest) {
-                    $columns = array_merge($columns, [$Debate->guest_name . ' Won']);
-                } else {
-                    $columns = array_merge($columns, [$Debate->guest_name . ' Lose']);
-                }
+        if ($Debate->guest !== null && $Debate->guest_name !== null) {
+            if ($Debate->guest) {
+                $columns = array_merge($columns, [$Debate->guest_name . ' Won']);
             } else {
-                $columns = array_merge($columns, ['']);
+                $columns = array_merge($columns, [$Debate->guest_name . ' Lose']);
             }
-        } 
+        } else {
+            $columns = array_merge($columns, ['']);
+        }
 
         return array_merge($columns, [
             $Debate->isDebate() ? $Debate->winning_side : null,
