@@ -5,7 +5,7 @@
     <td><!--Blank for formatting--></td>
     <td>Apandah Wins: {{ $season->getWinCountForMember('apandah') }}</td>
     <td>Aztro Wins: {{ $season->getWinCountForMember('aztro') }}</td>
-    @if ($season->season == 1)
+    @if ($debate->season == 1)
         <td>Jschlatt Wins: {{ $season->getWinCountForMember('schlatt') }}</td>
     @endif
     <td>Mika Wins: {{ $season->getWinCountForMember('mika') }}</td>

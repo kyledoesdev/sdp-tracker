@@ -21,7 +21,7 @@
     </td>
 @endif
 
-@if ($season->season == 1)
+@if ($debate->season == 1)
     @if ($debate->schlatt === null)
         <td class="pt-3">
             <i class="fa fa-minus"></i>

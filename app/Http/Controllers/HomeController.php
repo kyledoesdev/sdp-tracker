@@ -14,12 +14,21 @@ class HomeController extends Controller {
         $WebsiteVisit->updateVisits();
 
         $perPage = 10;
-        if ($request->has('perPage') && $request->input('perPage') < count(Debate::all())) {
+
+        $season = Season::findOrFail(2); //get second season by default
+
+        if ($request->has('season')) {
+            $season = Season::findOrFail($request->input('season'));
+        }
+
+        if ($request->has('perPage')) {
             $perPage = $request->input('perPage');
         }
 
         return view('home', [
-            'seasons' => Season::all(),
+            'debates' => $season->debates()->paginate($request->input('perPage') ?? $perPage),
+            'seasonNum' => $season->season,
+            'season' => $season,
             'WebsiteVisit' => $WebsiteVisit,
             'perPage' => $perPage,
         ]);

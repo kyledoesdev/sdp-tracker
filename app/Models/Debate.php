@@ -61,12 +61,8 @@ class Debate extends Model {
             ->orWhere('winning_side', 'LIKE', "%{$filters['search-box']}%");  
     }
 
-    public static function hasHadGuest() : bool {
-        return self::where('was_there_a_guest', true)->count() > 0;
-    }
-
-    public static function whereHasGuestThatWon() : bool {
-        return self::where('was_there_a_guest', true)->where('guest', true)->count() > 0;
+    public function season() : BelongsTo {
+        return $this->belongsTo(Season::class, 'season', 'season');
     }
 
     public function updatePodcast($fields) {

@@ -25,7 +25,7 @@
             />
         </a>
     </th>
-    @if ($season->season == 1)
+    @if ($debate->season == 1)
         <th class="p-1">
             <a target="_blank" href="https://www.youtube.com/c/jschlattLIVE/about">
                 <img 
