@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="container">
+        @include('includes.aws_message')
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <h1 class="d-flex display-1 text-center text-white mt-2" style="text-shadow: 4px 4px black;">sleep deprived podcast</h1>
