@@ -1,0 +1,52 @@
+body {
+    font-family: 'Nunito';
+}
+
+h1 {
+    text-shadow: 4px 4px black;
+}
+
+td {
+    font-size: 1vh;
+}
+
+.bg-img {
+    background: url(img/bg-2.png); 
+    background-size:cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-position: top;
+}
+
+.animate {
+    transition: .5s ease;
+}
+
+.animate:hover{
+    box-shadow: 0 0 0 2px #000000;
+    transition: .5s ease;
+}
+
+#debate-count-select {
+    background: transparent;
+    border: 0;
+    padding: 5px;
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+#debate-count-select option { 
+    color: black; 
+}
+
+#debate-count-select::-ms-expand {
+    color: white;
+    text-shadow: 2px 2px black;
+}
+
+@media (max-width: 620px) {
+  .container {
+    overflow-y: auto;
+    overflow-x: auto;
+  }
+}
