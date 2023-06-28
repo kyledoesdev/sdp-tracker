@@ -6,6 +6,11 @@ h1 {
     text-shadow: 4px 4px black;
 }
 
+tr {
+    background-color: white;
+    text-align: center;
+}
+
 td {
     font-size: 1vh;
 }

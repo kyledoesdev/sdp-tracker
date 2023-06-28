@@ -1,0 +1,41 @@
+id,podcast_number,topic_name,apandah,aztro,schlatt,mika,was_discussion,was_there_a_guest,guest,guest_name,winning_side,season,podcast_link,podcast_upload_date,created_at,updated_at,deleted_at
+1,74,"Hot Fries (Crispy) vs. Soggy Fries",0,1,1,0,0,0,0,NULL,"Hot Fries (Crispy)",1,https://www.youtube.com/watch?v=aF51P--PTZk,"2022-09-14 00:00:00","2022-10-10 17:49:39","2023-03-28 18:54:16",NULL
+2,75,"Cigarette Smell vs. Gasoline Smell",0,0,1,0,0,0,0,NULL,"Gasoline Smell",1,https://www.youtube.com/watch?v=mz7-j_rx9jA,"2022-09-21 00:00:00","2022-10-10 17:50:13","2023-03-28 18:54:16",NULL
+3,76,"Cake vs. Pie",0,1,1,0,0,0,0,NULL,Pie,1,https://www.youtube.com/watch?v=nJW8ewOaa5s,"2022-09-28 00:00:00","2022-10-10 17:50:54","2023-03-28 18:54:16",NULL
+4,77,"Nickelodeon vs. Cartoon Network",0,0,1,1,0,0,0,NULL,"Cartoon Network",1,https://www.youtube.com/watch?v=BleIVT7oeLw,"2022-10-05 00:00:00","2022-10-10 17:51:30","2023-03-28 18:54:17",NULL
+5,78,"Paintball vs. Airsoft",0,1,0,1,0,0,0,NULL,Paintball,1,https://www.youtube.com/watch?v=RMtR0jo__N4,"2022-10-12 00:00:00","2022-10-12 17:15:02","2023-03-28 18:54:17",NULL
+6,79,"Is Murder Good or Bad",0,1,1,1,0,0,0,NULL,"Murder is Bad.",1,https://www.youtube.com/watch?v=xKVX2k8Zmyw,"2022-10-19 00:00:00","2022-10-19 17:46:05","2023-03-28 18:54:17",NULL
+7,80,"Candy Corn vs. m&ms",0,1,1,1,0,0,0,NULL,"Candy Corn",1,https://www.youtube.com/watch?v=SrTJdYtV50c,"2022-10-26 00:00:00","2022-10-26 17:07:17","2023-03-28 18:54:17",NULL
+8,69420,"Stream Alex Unknown & Lilac Boy",0,1,0,1,0,0,0,NULL,"Not Apandah or Schlatt",NULL,NULL,"2000-06-07 00:00:00","2022-11-02 05:43:27","2022-11-02 05:43:27",NULL
+9,81,"Xbox 360 vs. PS3",1,0,1,0,0,0,0,NULL,"Xbox 360",1,https://www.youtube.com/watch?v=bnwA72ACcgw,"2022-11-02 00:00:00","2022-11-02 16:58:27","2023-03-28 18:54:17",NULL
+10,82,"Red vs. Blue",0,0,1,1,0,0,0,NULL,Blue,1,https://www.youtube.com/watch?v=s-8fZheW1dg&ab_channel=SleepDeprived,"2022-11-09 00:00:00","2022-11-09 17:00:32","2023-03-28 18:54:17",NULL
+11,83,"Kill Apandah or Spare Apandah",0,1,1,0,0,0,0,NULL,"Kill Apandah",1,https://www.youtube.com/watch?v=43phyjNxfHU&ab_channel=SleepDeprived,"2022-11-16 00:00:00","2022-11-16 17:57:35","2023-03-28 18:54:17",NULL
+12,84,"Would you allow strangers into your house?",0,0,0,0,1,0,0,NULL,No,1,https://www.youtube.com/watch?v=KpWx-n8Bh_o,"2022-11-22 00:00:00","2022-11-22 18:01:34","2023-03-28 18:54:17",NULL
+13,85,"5 Guys vs. McDonalds",1,1,0,0,0,0,0,NULL,"5 Guys",1,https://www.youtube.com/watch?v=M-x1Ons9Jbs&ab_channel=SleepDeprived,"2022-11-29 00:00:00","2022-11-29 22:53:41","2023-03-28 18:54:17",NULL
+14,86,"iPhone vs. Android",1,0,1,0,0,0,0,NULL,iPhone,1,https://www.youtube.com/watch?v=eyAXqyJKBK4&ab_channel=SleepDeprived,"2022-12-06 00:00:00","2022-12-06 16:47:14","2023-03-28 18:54:17",NULL
+15,87,"Fire vs. Grass vs. Water type Pokemon",0,0,0,1,0,0,0,NULL,"Water Type",1,https://www.youtube.com/watch?v=YQnV3S0VZng&ab_channel=SleepDeprived,"2022-12-19 00:00:00","2022-12-19 18:30:22","2023-03-28 18:54:17",NULL
+16,88,"Giants vs. Commanders",0,1,1,1,0,0,0,NULL,Giants,1,https://www.youtube.com/watch?v=zwTqmjQvyJs&ab_channel=SleepDeprived,"2022-12-21 00:00:00","2022-12-21 18:47:46","2023-03-28 18:54:17",NULL
+17,89,"Do you believe in God?",0,0,0,0,1,0,0,NULL,NULL,1,NULL,"2022-12-28 00:00:00","2022-12-28 18:44:49","2023-03-28 18:54:17",NULL
+18,90,"Did the call-in participants like each member's Chat GPT Speech?",0,1,1,1,0,0,0,NULL,"Chat GPT?",1,NULL,"2023-01-04 00:00:00","2023-01-04 18:24:41","2023-03-28 18:54:17",NULL
+19,91,"Crack vs. Heroin",1,1,1,1,0,0,0,NULL,Heroin,1,https://www.youtube.com/watch?v=NE09NfV5TH4&ab_channel=SleepDeprived,"2023-01-10 00:00:00","2023-01-11 17:58:01","2023-03-28 18:54:17",NULL
+20,92,"Family Guy vs. American Dad",1,0,0,1,0,0,0,NULL,"Family Guy",1,NULL,"2023-01-17 00:00:00","2023-01-17 17:58:51","2023-03-28 18:54:17",NULL
+21,93,"Who is the worst artist?",0,0,0,0,1,1,NULL,"Talking Ben",NULL,1,NULL,"2023-01-24 00:00:00","2023-01-24 18:51:21","2023-03-28 18:54:17",NULL
+22,94,"Rare, Uncooked Steak vs. Actually edible streak",0,1,1,0,0,1,NULL,"Talking Ben (RIP)","Cooked, edible steak",1,NULL,"2023-01-31 00:00:00","2023-01-31 19:36:55","2023-03-28 18:54:17",NULL
+23,95,"Dogs vs. Cats",1,1,1,0,0,0,NULL,NULL,Cats,1,NULL,"2023-02-07 00:00:00","2023-02-07 18:36:09","2023-03-28 18:54:17",NULL
+24,96,"Temple Run vs. Subway Surfers",0,0,1,1,0,1,NULL,"Talking Ben (Hospitalized)","Temple Run",1,NULL,"2023-02-14 00:00:00","2023-02-14 19:03:32","2023-03-28 18:54:17",NULL
+25,97,"The call in listeners ask Donald Trump a question",0,0,0,0,1,1,NULL,"Donald Trump",NULL,1,NULL,"2023-02-21 00:00:00","2023-02-21 18:12:20","2023-03-28 18:54:17",NULL
+26,98,"What would you do in a Zombie Apocalypse?",0,0,0,0,1,1,NULL,"Talking Ben",NULL,1,NULL,"2023-03-07 00:00:00","2023-03-07 18:20:31","2023-03-28 18:54:17",NULL
+27,99,"Unlimited vampire with bacon but no blood? Or unlimited blood with no blood but unlimited extra bacon and games?",0,0,0,0,1,1,NULL,"Talking Ben",NULL,1,NULL,"2023-03-14 00:00:00","2023-03-14 17:57:51","2023-03-28 18:54:17",NULL
+28,101,"Do you have any final words for Jschaltt?",0,0,0,0,1,0,NULL,NULL,NULL,2,NULL,"2023-03-28 00:00:00","2023-03-28 20:38:41","2023-03-28 20:38:41",NULL
+29,102,"Watch a movie all night or get 8 hours of sleep",1,1,NULL,0,0,0,NULL,NULL,"8 hours of sleep",2,NULL,"2023-04-04 00:00:00","2023-04-04 19:07:50","2023-04-04 19:07:50",NULL
+30,103,"Fake Drake & Fake Drake or Josh & Josh (Tree)",0,0,NULL,1,0,1,NULL,"Talking Ben","Josh & Josh (Tree)",2,NULL,"2023-04-11 00:00:00","2023-04-11 18:07:35","2023-04-11 18:07:35",NULL
+31,104,"The whale vs. the Mario movie.",0,1,NULL,1,0,1,NULL,"Talking Ben","The whale",2,NULL,"2023-04-18 00:00:00","2023-04-18 21:11:11","2023-04-18 21:11:11",NULL
+32,105,"Thoughts on the pee park? / markiplier's iron lung movie / mr beast burger collab ideas / coke or pepsi",0,0,0,0,1,0,NULL,NULL,NULL,2,NULL,"2023-04-25 00:00:00","2023-04-28 01:18:51","2023-04-28 01:18:51",NULL
+33,106,"Damn Daniel or Dat Boi",0,0,0,0,1,1,NULL,"Justin / (Stuart/Stewart)",NULL,2,NULL,"2023-05-02 00:00:00","2023-05-02 18:07:28","2023-05-02 18:07:28",NULL
+34,107,"Take it, or double it and give it to the next person? // (thank you for the kind words guys :])",0,0,0,0,1,1,NULL,NULL,NULL,2,NULL,"2023-05-09 00:00:00","2023-05-10 02:49:48","2023-05-10 02:50:28",NULL
+35,108,"Blue Algae vs Green Algae",0,0,0,0,1,1,NULL,"Talking Ben",NULL,2,NULL,"2023-05-16 00:00:00","2023-05-16 18:16:59","2023-05-16 18:16:59",NULL
+36,109,"Are there people in the water?",0,0,0,0,1,1,NULL,"Talking Ben",NULL,2,NULL,"2023-05-23 00:00:00","2023-05-23 18:42:28","2023-05-23 18:42:28",NULL
+37,110,"Do you like food? // Do you like poop? // Do you like the goblins from Oblivion or Skyrim?",0,0,0,0,1,0,NULL,NULL,NULL,2,NULL,"2023-05-30 00:00:00","2023-06-01 18:45:23","2023-06-01 18:45:23",NULL
+38,111,"Is Jimmy Carter Alive? // Do you like poop? // Spongebob or Patrick? // Patrick or Jimmy Carter? // Patrick or Squidward? // Larry or Mr. Krabs?",0,0,0,0,1,1,NULL,"Talking Ben (On the run from 100 Gecs)",NULL,2,NULL,"2023-06-06 00:00:00","2023-06-06 19:14:11","2023-06-06 19:14:33",NULL
+39,112,"If you could make a cursed, creepy-pasta type character, what would you make?",0,0,0,0,1,0,NULL,NULL,NULL,2,NULL,"2023-06-13 00:00:00","2023-06-13 19:08:16","2023-06-13 19:08:16",NULL
+40,113,"Mika tells the call-in listeners about refrigerant destruction. // bowling?",0,0,0,0,1,0,NULL,NULL,NULL,2,NULL,"2023-06-20 00:00:00","2023-06-22 18:48:27","2023-06-22 18:48:27",NULL
