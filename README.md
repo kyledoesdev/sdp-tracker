@@ -16,3 +16,7 @@ Episode 100 saw the depature of "Jschlatt" from the podcast. In accordance with 
 entered season 2. The "seasons" have now been split into two seperate pages.
 
 For suggestions and corrections feel free to start an issue.
+
+
+### temp URL for static site until August 1
+https://kylenotfound.github.io/sdp-tracker/index.html
