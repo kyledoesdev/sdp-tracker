@@ -11,10 +11,6 @@ tr {
     text-align: center;
 }
 
-td {
-    font-size: 1vh;
-}
-
 .bg-img {
     background: url(img/bg-2.png); 
     background-size:cover; 
