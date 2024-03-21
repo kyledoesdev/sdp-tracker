@@ -10,6 +10,13 @@ Utilizes:
 - CSS3
 - Bootstrap 5
 
+## Episode 150 Patch Notes
+Episode 150 saw the return of "Jschlatt" to the podcast. The podcast is now a patreon exclusive show & the gaming
+lets play episodes are now the primary focus of the Sleep Deprived Brand. In accordance with this change, the landing
+page is now exclusive to season 3 & season 2 & 1 are accessible via the nav section in the top right.
+
+### Kyle Notes
+The html keeps getting messier & messier, but I am too broke to afford AWS for another laravel app. Maybe one day.
 
 ## Version: 0.60.0 Patch Notes
 Episode 100 saw the depature of "Jschlatt" from the podcast. In accordance with this change, the podcast has
