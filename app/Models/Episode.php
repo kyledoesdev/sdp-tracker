@@ -26,7 +26,15 @@ class Episode extends Model
         'episode_upload_date'
     ];
 
-    public function casts(): array {
+    public static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('episode_order', fn($q) => $q->orderBy('episode_number', 'DESC'));
+    }
+
+    public function casts(): array
+    {
         return [
             'apandah_result' => 'boolean',
             'astrid_result' => 'boolean',
@@ -38,15 +46,23 @@ class Episode extends Model
         ];
     }
 
-    public function season(): BelongsTo {
+    public function season(): BelongsTo
+    {
         return $this->belongsTo(Season::class);
     }
 
-    public function getTypeAttribute(): string {
+    public function getTypeAttribute(): string
+    {
         return $this->episode_type == self::DEBATE ? 'Debate' : 'Discussion';
     }
 
-    public function isDebate(): bool {
+    public function isDebate(): bool
+    {
         return $this->episode_type == self::DEBATE;
+    }
+
+    public function getFormattedTopicAttribute(): string
+    {
+        return nl2br(collect(wordwrap($this->topic))->implode("\n"));
     }
 }

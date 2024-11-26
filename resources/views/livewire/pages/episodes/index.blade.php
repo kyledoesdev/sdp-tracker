@@ -42,8 +42,14 @@
                                     <flux:badge size="sm" :color="$episode->status_color" inset="top bottom">{{ $episode->episode_number }}</flux:badge>
                                 </flux:cell>
 
-                                <flux:cell variant="strong">{{ $episode->episode_type == 1  ? 'Debate' : 'Discussion' }}</flux:cell>
-                                <flux:cell variant="strong">{{ $episode->topic }}</flux:cell>
+                                <flux:cell variant="strong">
+                                    <flux:badge color="{{ $episode->isDebate() ? 'sky' : 'lime' }}">
+                                        {{ $episode->type }}
+                                    </flux:badge>
+                                </flux:cell>
+                                <flux:cell variant="strong">
+                                    {!! $episode->formatted_topic !!}
+                                </flux:cell>
                                 <flux:cell variant="strong">{{ $episode->episode_upload_date->format('M d, Y') }}</flux:cell>
 
                                 <flux:cell>

@@ -12,11 +12,13 @@ class Model extends EloquentModel
     use HasFactory;
     use SoftDeletes;
 
-    public function getCreatedAtAttribute(): string {
+    public function getCreatedAtAttribute(): string
+    {
         return Carbon::parse($this->attributes['created_at'])->diffForHumans();
     }
 
-    public function getUpdatedAtAttribute(): string {
+    public function getUpdatedAtAttribute(): string
+    {
         return Carbon::parse($this->attributes['updated_at'])->diffForHumans();
     }
 }

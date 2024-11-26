@@ -5,19 +5,21 @@ namespace App\Livewire;
 use App\Livewire\Traits\Sortable;
 use App\Models\Episode;
 use Livewire\Attributes\Computed;
-use Livewire\Attributes\Url;
 use Livewire\Component;
 
 class Home extends Component
 {
     use Sortable;
 
-    #[Url]
-    public int $season = 3;
+    public $season;
 
     public function mount()
-    {
-        $this->season = request()->season ?? 3;
+    {   
+        if (request()->season == null || !in_array(request()->season, [1,2,3])) {
+            $this->redirect(route('home') . '?season=3');
+        }
+
+        $this->season = request()->season;
     }
 
     public function render()
