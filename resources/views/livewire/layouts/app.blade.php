@@ -20,11 +20,13 @@
     <body class="bg-white dark:bg-zinc-900 antialiased min-h-screen text-gray-900 dark:text-gray-100">
         <livewire:layouts.navigation />
 
-        {{ $slot }}
+        <main>
+            {{ $slot }}
+        </main>
 
         @persist('toast')
             <flux:toast />
         @endpersist
-        @fluxScripts()
+        @fluxScripts
     </body>
 </html>

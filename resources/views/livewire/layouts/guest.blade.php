@@ -20,9 +20,9 @@
     <body class="min-h-screen bg-white dark:bg-zinc-800">
         <livewire:layouts.navigation />
         
-        <flux:main container>
+        <main>
             {{ $slot }}
-        </flux:main>
+        </main>
 
         @fluxScripts
     </body>

@@ -24,10 +24,10 @@ new #[Layout('livewire.layouts.guest')] class extends Component
     }
 }; ?>
 
-<div class="flex justify-center mt-4">
+<div class="flex justify-center mt-8">
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
-    <flux:card class="md:w-1/2">
+    <flux:card class="lg:w-1/3 md:w-1/2">
         <form wire:submit="login">
             <!-- Email Address -->
             <div>
