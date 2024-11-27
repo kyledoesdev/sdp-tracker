@@ -29,6 +29,7 @@
                         <flux:column sortable :sorted="$sortBy === 'episode_number'" :direction="$sortDirection" wire:click="sort('episode_number')">Episode</flux:column>
                         <flux:column sortable :sorted="$sortBy === 'episode_type'" :direction="$sortDirection" wire:click="sort('episode_type')">Type</flux:column>
                         <flux:column sortable :sorted="$sortBy === 'topic'" :direction="$sortDirection" wire:click="sort('topic')">Topic</flux:column>
+                        <flux:column sortable :sorted="$sortBy === 'winner'" :direction="$sortDirection" wire:click="sort('winner')">Winner</flux:column>
                         <flux:column sortable :sorted="$sortBy === 'episode_upload_date'" :direction="$sortDirection" wire:click="sort('episode_upload_date')">Upload Date</flux:column>
                         <flux:column>Actions</flux:column>
                     </flux:columns>
@@ -49,6 +50,9 @@
                                 </flux:cell>
                                 <flux:cell variant="strong">
                                     {!! $episode->formatted_topic !!}
+                                </flux:cell>
+                                <flux:cell>
+                                    {{ $episode->winner }}
                                 </flux:cell>
                                 <flux:cell variant="strong">{{ $episode->episode_upload_date->format('M d, Y') }}</flux:cell>
 
@@ -93,6 +97,8 @@
                 </flux:radio.group>
 
                 @if ($createForm->episode_type == $debate)
+                    <flux:input class="mb-3" wire:model="createForm.winner" label="Winning Topic" required />
+
                     <flux:checkbox.group class="mb-3" wire:model.live="createForm.winners" label="Who were the Winners?">
                         <flux:checkbox label="apandah" value="apandah_result" />
                         <flux:checkbox label="astrid" value="astrid_result" />
@@ -151,6 +157,8 @@
                 </flux:radio.group>
 
                 @if ($editForm->episode_type == $debate)
+                    <flux:input class="mb-3" wire:model="createForm.winner" label="Winning Topic" required />
+
                     <flux:checkbox.group class="mb-3" wire:model.live="editForm.winners" label="Who were the Winners?">
                         <flux:checkbox label="apandah" value="apandah_result" />
                         <flux:checkbox label="astrid" value="astrid_result" />

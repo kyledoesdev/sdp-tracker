@@ -14,6 +14,7 @@ class Episode extends Model
         'season_id',
         'episode_number',
         'topic',
+        'winner',
         'episode_type',
         'apandah_result',
         'astrid_result',

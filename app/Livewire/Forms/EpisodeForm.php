@@ -31,6 +31,7 @@ class EpisodeForm extends Form
     public $episode_url = null;
     public $guest_result = null;
     public $guest_name = null;
+    public $winner = null;
 
     public ?int $episodeId = null;
 
@@ -44,6 +45,7 @@ class EpisodeForm extends Form
             'episode_number' => $this->episode_number,
             'episode_type' => $this->episode_type,
             'topic' => $this->topic,
+            'winner' => $this->winner,
             'apandah_result' => $winners->contains('apandah_result'),
             'astrid_result' => $winners->contains('astrid_result'),
             'jschlatt_result' => $winners->contains('jschlatt_result'),
@@ -72,6 +74,7 @@ class EpisodeForm extends Form
         $this->episode_number = $episode->episode_number;
         $this->episode_type = $episode->episode_type;
         $this->topic = $episode->topic;
+        $this->winner = $episode->winner;
         $this->winners[] = $episode->apandah_result ? 'apandah_result' : '';
         $this->winners[] = $episode->astrid_result ? 'astrid_result' : '';
         $this->winners[] = $episode->jschlatt_result ? 'jschlatt_result' : '';
