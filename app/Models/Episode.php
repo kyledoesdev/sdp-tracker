@@ -66,4 +66,16 @@ class Episode extends Model
     {
         return nl2br(collect(wordwrap($this->topic))->implode("\n"));
     }
+
+    public static function getChampion(): string
+    {
+        $wins = self::selectRaw('
+            SUM(apandah_result) as apandah,
+            SUM(astrid_result) as astrid,
+            SUM(jschlatt_result) as jschlatt,
+            SUM(mikasacus_result) as mikasacus
+        ')->first();
+        
+        return collect($wins)->sortDesc()->keys()->first();
+    }
 }

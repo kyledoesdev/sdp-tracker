@@ -34,6 +34,7 @@ new class extends Component
             <flux:navbar.item href="{{ route('home') }}?season=3">Season 3</flux:navbar.item>
             <flux:navbar.item href="{{ route('home') }}?season=2">Season 2</flux:navbar.item>
             <flux:navbar.item href="{{ route('home') }}?season=1">Season 1</flux:navbar.item>
+            <flux:navbar.item href="{{ route('stats') }}">Stats</flux:navbar.item>
         </flux:navbar>
 
         <flux:spacer />
@@ -84,6 +85,7 @@ new class extends Component
             <flux:navbar.item href="{{ route('home') }}?season=3">Season 3</flux:navbar.item>
             <flux:navbar.item href="{{ route('home') }}?season=2">Season 2</flux:navbar.item>
             <flux:navbar.item href="{{ route('home') }}?season=1">Season 1</flux:navbar.item>
+            <flux:navbar.item href="{{ route('stats') }}">Stats</flux:navbar.item>
         </flux:navlist>
 
         <flux:spacer />
