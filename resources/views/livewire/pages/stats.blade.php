@@ -17,18 +17,18 @@
                     </flux:accordion.heading>
                     <flux:accordion.content>
                         <flux:table>
-                            <flux:columns>
-                                <flux:column>Episode</flux:column>
-                                <flux:column>Topic</flux:column>
-                                <flux:column>Winner</flux:column>
+                            <flux:table.columns>
+                                <flux:table.column>Episode</flux:column>
+                                <flux:table.column>Topic</flux:column>
+                                <flux:table.column>Winner</flux:column>
                             </flux:columns>
 
-                            <flux:rows>
+                            <flux:table.rows>
                                 @foreach ($this->episodes->where('apandah_result', true) as $episode)
-                                    <flux:row>
-                                        <flux:cell>{{ $episode->episode_number }}</flux:cell>
-                                        <flux:cell>{{ $episode->topic }}</flux:cell>
-                                        <flux:cell>{{ $episode->winner }}</flux:cell>
+                                    <flux:table.rows>
+                                        <flux:table.cell>{{ $episode->episode_number }}</flux:table.cell>
+                                        <flux:table.cell>{{ $episode->topic }}</flux:table.cell>
+                                        <flux:table.cell>{{ $episode->winner }}</flux:table.cell>
                                     </flux:row>
                                 @endforeach
                             </flux:rows>
@@ -46,18 +46,18 @@
                     </flux:accordion.heading>
                     <flux:accordion.content>
                         <flux:table>
-                            <flux:columns>
-                                <flux:column>Episode</flux:column>
-                                <flux:column>Topic</flux:column>
-                                <flux:column>Winner</flux:column>
+                            <flux:table.columns>
+                                <flux:table.column>Episode</flux:column>
+                                <flux:table.column>Topic</flux:column>
+                                <flux:table.column>Winner</flux:column>
                             </flux:columns>
 
-                            <flux:rows>
+                            <flux:table.rows>
                                 @foreach ($this->episodes->where('astrid_result', true) as $episode)
-                                    <flux:row>
-                                        <flux:cell>{{ $episode->episode_number }}</flux:cell>
-                                        <flux:cell>{{ $episode->topic }}</flux:cell>
-                                        <flux:cell>{{ $episode->winner }}</flux:cell>
+                                    <flux:table.rows>
+                                        <flux:table.cell>{{ $episode->episode_number }}</flux:table.cell>
+                                        <flux:table.cell>{{ $episode->topic }}</flux:table.cell>
+                                        <flux:table.cell>{{ $episode->winner }}</flux:table.cell>
                                     </flux:row>
                                 @endforeach
                             </flux:rows>
@@ -75,18 +75,18 @@
                     </flux:accordion.heading>
                     <flux:accordion.content>
                         <flux:table>
-                            <flux:columns>
-                                <flux:column>Episode</flux:column>
-                                <flux:column>Topic</flux:column>
-                                <flux:column>Winner</flux:column>
+                            <flux:table.columns>
+                                <flux:table.column>Episode</flux:column>
+                                <flux:table.column>Topic</flux:column>
+                                <flux:table.column>Winner</flux:column>
                             </flux:columns>
 
-                            <flux:rows>
+                            <flux:table.rows>
                                 @foreach ($this->episodes->where('jschlatt_result', true) as $episode)
-                                    <flux:row>
-                                        <flux:cell>{{ $episode->episode_number }}</flux:cell>
-                                        <flux:cell>{{ $episode->topic }}</flux:cell>
-                                        <flux:cell>{{ $episode->winner }}</flux:cell>
+                                    <flux:table.rows>
+                                        <flux:table.cell>{{ $episode->episode_number }}</flux:table.cell>
+                                        <flux:table.cell>{{ $episode->topic }}</flux:table.cell>
+                                        <flux:table.cell>{{ $episode->winner }}</flux:table.cell>
                                     </flux:row>
                                 @endforeach
                             </flux:rows>
@@ -104,18 +104,18 @@
                     </flux:accordion.heading>
                     <flux:accordion.content>
                         <flux:table>
-                            <flux:columns>
-                                <flux:column>Episode</flux:column>
-                                <flux:column>Topic</flux:column>
-                                <flux:column>Winner</flux:column>
+                            <flux:table.columns>
+                                <flux:table.column>Episode</flux:column>
+                                <flux:table.column>Topic</flux:column>
+                                <flux:table.column>Winner</flux:column>
                             </flux:columns>
 
-                            <flux:rows>
+                            <flux:table.rows>
                                 @foreach ($this->episodes->where('mikasacus_result', true) as $episode)
-                                    <flux:row>
-                                        <flux:cell>{{ $episode->episode_number }}</flux:cell>
-                                        <flux:cell>{{ $episode->topic }}</flux:cell>
-                                        <flux:cell>{{ $episode->winner }}</flux:cell>
+                                    <flux:table.rows>
+                                        <flux:table.cell>{{ $episode->episode_number }}</flux:table.cell>
+                                        <flux:table.cell>{{ $episode->topic }}</flux:table.cell>
+                                        <flux:table.cell>{{ $episode->winner }}</flux:table.cell>
                                     </flux:row>
                                 @endforeach
                             </flux:rows>

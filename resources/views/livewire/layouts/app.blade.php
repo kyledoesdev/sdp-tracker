@@ -16,7 +16,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        @fluxStyles
+        @fluxAppearance
     </head>
     <body class="bg-white dark:bg-zinc-900 antialiased min-h-screen text-gray-900 dark:text-gray-100">
         <livewire:layouts.navigation />

@@ -2,7 +2,7 @@
     {{-- Header & Create Model --}}
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-zinc-50 dark:bg-zinc-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-zinc-50 dark:bg-zinc-800 overflow-hidden shadow-xs sm:rounded-lg">
                 <div class="p-6">
                     <div class="flex justify-between">
                         <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight mt-2">
@@ -22,41 +22,41 @@
     {{-- Table of Episodes --}}
     <div class="py-6">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-zinc-50 dark:bg-zinc-800 overflow-hidden shadow-sm sm:rounded-lg p-6">
+            <div class="bg-zinc-50 dark:bg-zinc-800 overflow-hidden shadow-xs sm:rounded-lg p-6">
                 <flux:table :paginate="$this->episodes">
-                    <flux:columns>
-                        <flux:column sortable :sorted="$sortBy === 'season_id'" :direction="$sortDirection" wire:click="sort('season_id')">Season</flux:column>
-                        <flux:column sortable :sorted="$sortBy === 'episode_number'" :direction="$sortDirection" wire:click="sort('episode_number')">Episode</flux:column>
-                        <flux:column sortable :sorted="$sortBy === 'episode_type'" :direction="$sortDirection" wire:click="sort('episode_type')">Type</flux:column>
-                        <flux:column sortable :sorted="$sortBy === 'topic'" :direction="$sortDirection" wire:click="sort('topic')">Topic</flux:column>
-                        <flux:column sortable :sorted="$sortBy === 'winner'" :direction="$sortDirection" wire:click="sort('winner')">Winner</flux:column>
-                        <flux:column sortable :sorted="$sortBy === 'episode_upload_date'" :direction="$sortDirection" wire:click="sort('episode_upload_date')">Upload Date</flux:column>
-                        <flux:column>Actions</flux:column>
+                    <flux:table.columns>
+                        <flux:table.column sortable :sorted="$sortBy === 'season_id'" :direction="$sortDirection" wire:click="sort('season_id')">Season</flux:column>
+                        <flux:table.column sortable :sorted="$sortBy === 'episode_number'" :direction="$sortDirection" wire:click="sort('episode_number')">Episode</flux:column>
+                        <flux:table.column sortable :sorted="$sortBy === 'episode_type'" :direction="$sortDirection" wire:click="sort('episode_type')">Type</flux:column>
+                        <flux:table.column sortable :sorted="$sortBy === 'topic'" :direction="$sortDirection" wire:click="sort('topic')">Topic</flux:column>
+                        <flux:table.column sortable :sorted="$sortBy === 'winner'" :direction="$sortDirection" wire:click="sort('winner')">Winner</flux:column>
+                        <flux:table.column sortable :sorted="$sortBy === 'episode_upload_date'" :direction="$sortDirection" wire:click="sort('episode_upload_date')">Upload Date</flux:column>
+                        <flux:table.column>Actions</flux:column>
                     </flux:columns>
 
-                    <flux:rows>
+                    <flux:table.rows>
                         @foreach ($this->episodes as $episode)
-                            <flux:row :key="$episode->getKey()">
-                                <flux:cell class="whitespace-nowrap">{{ $episode->season->name }}</flux:cell>
+                            <flux:table.rows :key="$episode->getKey()">
+                                <flux:table.cell class="whitespace-nowrap">{{ $episode->season->name }}</flux:table.cell>
 
-                                <flux:cell>
+                                <flux:table.cell>
                                     <flux:badge size="sm" :color="$episode->status_color" inset="top bottom">{{ $episode->episode_number }}</flux:badge>
-                                </flux:cell>
+                                </flux:table.cell>
 
-                                <flux:cell variant="strong">
+                                <flux:table.cell variant="strong">
                                     <flux:badge color="{{ $episode->isDebate() ? 'sky' : 'lime' }}">
                                         {{ $episode->type }}
                                     </flux:badge>
-                                </flux:cell>
-                                <flux:cell variant="strong">
+                                </flux:table.cell>
+                                <flux:table.cell variant="strong">
                                     {!! $episode->formatted_topic !!}
-                                </flux:cell>
-                                <flux:cell>
+                                </flux:table.cell>
+                                <flux:table.cell>
                                     {{ $episode->winner }}
-                                </flux:cell>
-                                <flux:cell variant="strong">{{ $episode->episode_upload_date->format('M d, Y') }}</flux:cell>
+                                </flux:table.cell>
+                                <flux:table.cell variant="strong">{{ $episode->episode_upload_date->format('M d, Y') }}</flux:table.cell>
 
-                                <flux:cell>
+                                <flux:table.cell>
                                     <flux:dropdown>
                                         <flux:button variant="ghost" size="sm" icon="ellipsis-horizontal" inset="top bottom"></flux:button>
 
@@ -65,7 +65,7 @@
                                             <flux:menu.item icon="trash" wire:click="confirm('{{ $episode->getKey() }}')">Delete</flux:menu.item>
                                         </flux:menu>
                                     </flux:dropdown>
-                                </flux:cell>
+                                </flux:table.cell>
                             </flux:row>
                         @endforeach
                     </flux:rows>
@@ -83,9 +83,9 @@
         <form wire:submit="store">
             <div class="py-2">
                 <flux:select variant="listbox" class="mb-3" wire:model.self="createForm.season_id" label="Which Season?" required>
-                    <flux:option value="3">Season 3</flux:option>
-                    <flux:option value="2">Season 2</flux:option>
-                    <flux:option value="1">Season 1</flux:option>
+                    <flux:select.option value="3">Season 3</flux:select.option>
+                    <flux:select.option value="2">Season 2</flux:select.option>
+                    <flux:select.option value="1">Season 1</flux:select.option>
                 </flux:select>
 
                 <flux:input class="mb-3" wire:model="createForm.episode_number" label="Episode Number" type="number" min="1" required />
@@ -143,9 +143,9 @@
         <form wire:submit="update">
             <div class="py-2">
                 <flux:select variant="listbox" class="mb-3" wire:model.self="editForm.season_id" label="Which Season?" required>
-                    <flux:option value="3">Season 3</flux:option>
-                    <flux:option value="2">Season 2</flux:option>
-                    <flux:option value="1">Season 1</flux:option>
+                    <flux:select.option value="3">Season 3</flux:select.option>
+                    <flux:select.option value="2">Season 2</flux:select.option>
+                    <flux:select.option value="1">Season 1</flux:select.option>
                 </flux:select>
 
                 <flux:input class="mb-3" wire:model="editForm.episode_number" label="Episode Number" type="number" min="1" required />
