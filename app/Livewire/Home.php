@@ -15,8 +15,8 @@ class Home extends Component
 
     public function mount()
     {   
-        if (request()->season == null || !in_array(request()->season, [1,2,3])) {
-            $this->redirect(route('home') . '?season=3');
+        if (request()->season == null || !in_array(request()->season, [1,2,3,4])) {
+            $this->redirect(route('home') . '?season=4');
         }
 
         $this->season = request()->season;

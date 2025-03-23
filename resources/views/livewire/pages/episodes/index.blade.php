@@ -83,6 +83,9 @@
         <form wire:submit="store">
             <div class="py-2">
                 <flux:select variant="listbox" class="mb-3" wire:model.self="createForm.season_id" label="Which Season?" required>
+                    <flux:select.option value="6">Season 6</flux:select.option>
+                    <flux:select.option value="5">Season 5</flux:select.option>
+                    <flux:select.option value="4">Season 4</flux:select.option>
                     <flux:select.option value="3">Season 3</flux:select.option>
                     <flux:select.option value="2">Season 2</flux:select.option>
                     <flux:select.option value="1">Season 1</flux:select.option>
