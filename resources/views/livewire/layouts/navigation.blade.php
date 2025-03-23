@@ -31,9 +31,19 @@ new class extends Component
             @else
             @endauth
 
-            <flux:navbar.item href="{{ route('home') }}?season=3">Season 3</flux:navbar.item>
-            <flux:navbar.item href="{{ route('home') }}?season=2">Season 2</flux:navbar.item>
-            <flux:navbar.item href="{{ route('home') }}?season=1">Season 1</flux:navbar.item>
+            <flux:navbar.item href="{{ route('home') }}?season=4">Current Season</flux:navbar.item>
+
+            <flux:dropdown>
+                <flux:navbar.item icon-trailing="chevron-down">Past Seasons</flux:navbar.item>
+
+                <flux:navmenu>
+                    <flux:navbar.item href="{{ route('home') }}?season=3">Season 3</flux:navbar.item>
+                    <flux:navbar.item href="{{ route('home') }}?season=2">Season 2</flux:navbar.item>
+                    <flux:navbar.item href="{{ route('home') }}?season=1">Season 1</flux:navbar.item>
+                </flux:navmenu>
+            </flux:dropdown>
+
+            
             <flux:navbar.item href="{{ route('stats') }}">Stats</flux:navbar.item>
         </flux:navbar>
 
@@ -82,9 +92,14 @@ new class extends Component
             @else
             @endauth
 
-            <flux:navbar.item href="{{ route('home') }}?season=3">Season 3</flux:navbar.item>
-            <flux:navbar.item href="{{ route('home') }}?season=2">Season 2</flux:navbar.item>
-            <flux:navbar.item href="{{ route('home') }}?season=1">Season 1</flux:navbar.item>
+            <flux:navbar.item href="{{ route('home') }}?season=4">Current Season</flux:navbar.item>
+
+            <flux:navlist.group expandable heading="Past Seasons">
+                <flux:navbar.item href="{{ route('home') }}?season=3">Season 3</flux:navbar.item>
+                <flux:navbar.item href="{{ route('home') }}?season=2">Season 2</flux:navbar.item>
+                <flux:navbar.item href="{{ route('home') }}?season=1">Season 1</flux:navbar.item>
+            </flux:navlist.group>
+
             <flux:navbar.item href="{{ route('stats') }}">Stats</flux:navbar.item>
         </flux:navlist>
 

@@ -3,6 +3,9 @@
         <flux:heading class="text-xl md:text-3xl">
             Season {{ request()->season }} Call-In Segments
         </flux:heading>
+        <flux:subheading>
+            {{ App\Models\Season::getEpisodeRange(request()->season) }}
+        </flux:subheading>
     </div>
 
     <div class="mt-8">
