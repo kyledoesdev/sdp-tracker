@@ -14,7 +14,7 @@ new class extends Component
 }; ?>
 
 <div>
-    <flux:header class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700">
+    <flux:header container class="bg-zinc-50 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-700">
         <flux:sidebar.toggle class="lg:hidden" icon="bars-2" inset="left" />
 
         <flux:navbar class="-mb-px max-lg:hidden">
@@ -31,19 +31,6 @@ new class extends Component
             @else
             @endauth
 
-            <flux:navbar.item href="{{ route('home') }}?season=4">Current Season</flux:navbar.item>
-
-            <flux:dropdown>
-                <flux:navbar.item icon-trailing="chevron-down">Past Seasons</flux:navbar.item>
-
-                <flux:navmenu>
-                    <flux:navbar.item href="{{ route('home') }}?season=3">Season 3</flux:navbar.item>
-                    <flux:navbar.item href="{{ route('home') }}?season=2">Season 2</flux:navbar.item>
-                    <flux:navbar.item href="{{ route('home') }}?season=1">Season 1</flux:navbar.item>
-                </flux:navmenu>
-            </flux:dropdown>
-
-            
             <flux:navbar.item href="{{ route('stats') }}">Stats</flux:navbar.item>
         </flux:navbar>
 
@@ -91,14 +78,6 @@ new class extends Component
                 <flux:navbar.item href="{{ route('dashboard') }}">Dashboard</flux:navbar.item>
             @else
             @endauth
-
-            <flux:navbar.item href="{{ route('home') }}?season=4">Current Season</flux:navbar.item>
-
-            <flux:navlist.group expandable heading="Past Seasons">
-                <flux:navbar.item href="{{ route('home') }}?season=3">Season 3</flux:navbar.item>
-                <flux:navbar.item href="{{ route('home') }}?season=2">Season 2</flux:navbar.item>
-                <flux:navbar.item href="{{ route('home') }}?season=1">Season 1</flux:navbar.item>
-            </flux:navlist.group>
 
             <flux:navbar.item href="{{ route('stats') }}">Stats</flux:navbar.item>
         </flux:navlist>

@@ -7,7 +7,7 @@ use App\Livewire\Stats;
 use Illuminate\Support\Facades\Route;
 use Spatie\Health\Http\Controllers\HealthCheckResultsController;
 
-Route::get('/', fn() => redirect(route('home').'?season=4'))->name('root');
+Route::get('/', fn() => redirect(route('home')))->name('root');
 Route::get('/home', Home::class)->name('home');
 Route::get('/stats', Stats::class)->name('stats');
 

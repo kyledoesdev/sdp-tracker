@@ -1,12 +1,18 @@
-<flux:container class="space-y-6 md:w-1/2 mt-6">
-    <div class="flex justify-between items-center">
+<flux:container>
+    <div class="flex justify-between items-center mt-4">
         <flux:heading class="text-xl md:text-3xl">
-            Season {{ request()->season }} Call-In Segments
+            SDP Call-In Segments
         </flux:heading>
-        <flux:subheading>
-            {{ App\Models\Season::getEpisodeRange(request()->season) }}
-        </flux:subheading>
     </div>
+
+    <div class="mt-8 px-4 py-3 shadow-xl border rounded-lg flex items-center justify-center gap-2">
+        <flux:icon name="information-circle" class="size-5 shrink-0" />
+        <flux:text>
+            As of January 01, 2025 the Sleep Deprived Podcast will be ending. This website will remain up. Check out the gang's new project
+            <flux:link href="https://www.youtube.com/@daBananaChannel" target="_blank">here</flux:link>.
+        </flux:text>
+    </div>
+    
 
     <div class="mt-8">
         @forelse ($this->episodes as $episode)
