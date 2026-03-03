@@ -19,10 +19,12 @@ class Home extends Component
     #[Computed]
     public function episodes()
     {
-        return Episode::query()
+        return cache()->remember('sdp-query', now()->addYear(), function() { 
+            return Episode::query()
             //->where('season_id', $this->season)
             ->tap(fn ($query) => $this->sortBy ? $query->orderBy($this->sortBy, $this->sortDirection) : $query)
             ->with('season')
             ->get();
+        });
     }
 }
