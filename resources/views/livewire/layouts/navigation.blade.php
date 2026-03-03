@@ -38,7 +38,7 @@ new class extends Component
 
         <x-dark-mode-toggle />
 
-        <flux:separator vertical variant="subtle" class="m-2" />
+        {{-- <flux:separator vertical variant="subtle" class="m-2" /> --}}
 
         @auth
             <flux:dropdown position="top" align="start">
@@ -58,8 +58,6 @@ new class extends Component
                     </flux:menu.item>
                 </flux:menu>
             </flux:dropdown>
-        @else
-            <flux:button class="mx-1" href="{{ route('login') }}" icon-trailing="arrow-up-right">Login</flux:button>
         @endauth
     </flux:header>
 
@@ -82,7 +80,7 @@ new class extends Component
             <flux:navbar.item href="{{ route('stats') }}">Stats</flux:navbar.item>
         </flux:navlist>
 
-        <flux:spacer />
+        {{-- <flux:spacer /> --}}
 
         <x-dark-mode-toggle />
 
@@ -104,8 +102,6 @@ new class extends Component
                     </flux:menu.item>
                 </flux:menu>
             </flux:dropdown>
-        @else
-            <flux:button class="mx-1" href="{{ route('login') }}" icon-trailing="arrow-up-right">Login</flux:button>
         @endauth
     </flux:sidebar>
 </div>
